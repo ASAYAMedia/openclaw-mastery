@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide 1: Initial Setup — OpenClaw Mastery</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .back-link {
+            color: #667eea;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .meta {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #764ba2;
+            margin: 30px 0 15px;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #333;
+            margin: 25px 0 10px;
+            font-size: 1.2em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .affiliate-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .affiliate-box a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .next-guide {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .next-guide a {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to All Guides</a>
+        
+        <h1>Guide 1: Initial Setup</h1>
+        <p class="meta">⏱️ 30 minutes | 💰 Free (uses free tiers) | 🎯 Beginner</p>
+        
+        <div class="content">
+            <p>In this guide, you'll install OpenClaw, connect your first AI model, and have a working assistant in under 30 minutes. Let's build your AI companion.</p>
+            
+            <h2>What You'll Build</h2>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>✅ OpenClaw running locally on your machine</li>
+                <li>✅ Connection to Fireworks AI (Kimi K2.5 model)</li>
+                <li>✅ Telegram bot for messaging</li>
+                <li>✅ Basic automation ready</li>
+            </ul>
+            
+            <div class="affiliate-box">
+                <h3>💡 Need a Server?</h3>
+                <p>While OpenClaw runs great on your laptop, a cloud server keeps it online 24/7.</p>
+                <p><strong>DigitalOcean:</strong> $200 free credit for 60 days → Perfect for testing</p>
+                <a href="https://www.digitalocean.com/?refcode=YOURCODE" target="_blank">Get $200 Free Credit</a>
+            </div>
+            
+            <h2>Step 1: Install OpenClaw</h2>
+            
+            <h3>Windows (PowerShell)</h3>
+            <pre><code># Install OpenClaw CLI
+npm install -g openclaw
+
+# Verify installation
+openclaw --version
+
+# Initialize your workspace
+openclaw init</code></pre>
+            
+            <h3>macOS / Linux</h3>
+            <pre><code># Install OpenClaw CLI
+npm install -g openclaw
+
+# Or with Homebrew
+brew install openclaw
+
+# Verify
+openclaw --version
+openclaw init</code></pre>
+            
+            <div class="tip">
+                💡 <strong>Pro Tip:</strong> The `init` command creates your workspace at `~/.openclaw/workspace`. This is where all your files, memory, and configurations live.
+            </div>
+            
+            <h2>Step 2: Get Your API Keys</h2>
+            
+            <p>You need at least one AI provider. I recommend starting with <strong>Fireworks AI</strong> (fast, cheap, high quality).</p>
+            
+            <h3>Fireworks AI (Recommended)</h3>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Go to <a href="https://fireworks.ai">fireworks.ai</a></li>
+                <li>Sign up for free (no credit card needed)</li>
+                <li>Get $1 free credit (enough for weeks of testing)</li>
+                <li>Copy your API key from the dashboard</li>
+            </ol>
+            
+            <div class="affiliate-box">
+                <h3>🔥 Fireworks AI</h3>
+                <p>My top pick: Kimi K2.5 model, fast inference, generous free tier</p>
+                <a href="https://fireworks.ai" target="_blank">Sign Up Free</a>
+            </div>
+            
+            <h3>Alternative: Google Gemini (Free Tier)</h3>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Go to <a href="https://makersuite.google.com">makersuite.google.com</a></li>
+                <li>Create free API key</li>
+                <li>1,500 requests/day free tier</li>
+            </ol>
+            
+            <h2>Step 3: Configure OpenClaw</h2>
+            
+            <p>Edit your config file:</p>
+            
+            <pre><code># Windows
+notepad %USERPROFILE%\.openclaw\openclaw.json
+
+# macOS/Linux
+nano ~/.openclaw/openclaw.json</code></pre>
+            
+            <p>Add your API key:</p>
+            
+            <pre><code>{
+  "env": {
+    "FIREWORKS_API_KEY": "your-key-here"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "fireworks/accounts/fireworks/models/kimi-k2p5"
+      }
+    }
+  }
+}</code></pre>
+            
+            <div class="warning">
+                ⚠️ <strong>Security:</strong> Never share your API keys or commit them to public repos. OpenClaw stores them locally in your config file.
+            </div>
+            
+            <h2>Step 4: Test Your Setup</h2>
+            
+            <pre><code># Start OpenClaw
+openclaw
+
+# Test with a simple question
+/help</code></pre>
+            
+            <p>If you see the help menu, you're connected! 🎉</p>
+            
+            <h2>Step 5: Connect Telegram (Optional)</h2>
+            
+            <p>Want to chat from your phone? Set up Telegram:</p>
+            
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Message <a href="https://t.me/BotFather">@BotFather</a> on Telegram</li>
+                <li>Type <code>/newbot</code> and follow prompts</li>
+                <li>Copy the bot token (looks like: <code>123456789:ABCdefGHIjklMNOpqrsTUVwxyz</code>)</li>
+                <li>Add to your config:</li>
+            </ol>
+            
+            <pre><code>{
+  "channels": {
+    "telegram": {
+      "botToken": "YOUR_BOT_TOKEN_HERE"
+    }
+  }
+}</code></pre>
+            
+            <div class="tip">
+                💡 You can also connect WhatsApp, Discord, Slack. We'll cover those in the next guides.
+            </div>
+            
+            <h2>What You've Built</h2>
+            
+            <p>✅ OpenClaw running locally<br>
+            ✅ AI assistant with Kimi 2.5 model<br>
+            ✅ Telegram integration (optional)<br>
+            ✅ Ready for advanced features</p>
+            
+            <div class="next-guide">
+                <h3>Next: Connect Messaging</h3>
+                <p>Learn to link WhatsApp, Discord, and more.</p>
+                <a href="guide-02-messaging.html">Continue to Guide 2 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

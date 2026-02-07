@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide 3: Voice Control — OpenClaw Mastery</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .back-link {
+            color: #667eea;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .meta {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #764ba2;
+            margin: 30px 0 15px;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #333;
+            margin: 25px 0 10px;
+            font-size: 1.2em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .affiliate-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .affiliate-box a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .next-guide {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .next-guide a {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to All Guides</a>
+        
+        <h1>Guide 3: Voice Control</h1>
+        <p class="meta">⏱️ 60 minutes | 💰 Free (uses local models) | 🎯 Intermediate</p>
+        
+        <div class="content">
+            <p>Give your AI assistant a voice! In this guide, you'll set up neural text-to-speech (TTS) using a local model and enable voice input for commands.</p>
+            
+            <h2>What You'll Set Up</h2>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>✅ Offline neural TTS with Piper</li>
+                <li>✅ Voice commands via microphone</li>
+                <li>✅ Speaking responses from your AI</li>
+            </ul>
+            
+            <div class="affiliate-box">
+                <h3>🚀 Piper TTS</h3>
+                <p>Piper is a fast, local neural TTS system. Perfect for privacy and offline use.</p>
+                <p><strong>You can download voices and executables freely.</strong></p>
+                <a href="https://github.com/Kilian/piper">Explore Piper TTS</a>
+            </div>
+
+            <h2>Step 1: Install Piper TTS</h2>
+            
+            <h3>Download Piper</h3>
+            <p>Download the latest release from the <a href="https://github.com/Kilian/piper/releases">Piper releases page</a>. You'll need the executable for your OS (e.g., `piper.exe` for Windows, `piper` for Linux/macOS).</p>
+            <p>Place the executable in a convenient location, e.g., `C:\Temp\piper\piper.exe`.</p>
+            
+            <h3>Download Voice Model</h3>
+            <p>Choose a voice model from the Piper releases. For English, a good start is `en_US-lessac-medium.onnx`. Download it and place it in the same directory as the executable.</p>
+            <div class="tip">
+                💡 <strong>Custom Voices:</strong> Piper supports many languages and voices. Explore them on the official site!
+            </div>
+            
+            <h2>Step 2: Configure OpenClaw for TTS</h2>
+
+            <p>Edit your OpenClaw config file (`~/.openclaw/openclaw.json`).</p>
+            
+            <h3>Add Piper TTS Configuration</h3>
+            <pre><code class="language-json">{
+  "tools": {
+    "media": {
+      "audio": {
+        "enabled": true,
+        "models": [
+          {
+            "provider": "piper",
+            "type": "cli",
+            "command": "C:\\Temp\\piper\\piper.exe", 
+            "language": "en-US",
+            "voice": "en_US-lessac-medium.onnx",
+            "output_file": "{output}",
+            "espeak_data": "C:\\Temp\\piper\\piper\\espeak-ng-data"
+          }
+        ]
+      }
+    }
+  }
+}</code></pre>
+            <div class="warning">
+                ⚠️ <strong>Paths:</strong> Make sure the `command`, `voice`, and `espeak_data` paths exactly match where you installed Piper and its model.
+            </div>
+
+            <h2>Step 3: Voice Input (Microphone)</h2>
+
+            <p>OpenClaw can use your system's default microphone for input. Most messaging platforms (Telegram, Discord bots) will automatically handle voice messages. For direct commands involving voice, OpenClaw uses system defaults.</p>
+
+            <pre><code class="language-bash"># Example: Sending a voice message via Telegram
+# (This is handled by the platform integration, not direct command)
+openclaw message --channel telegram --action send --message "This is a voice message" --asVoice</code></pre>
+
+            <div class="tip">
+                💡 <strong>Node Support:</strong> If using OpenClaw on a less common OS or environment, you might need to configure audio input drivers. Check OpenClaw documentation for your specific setup.
+            </div>
+
+            <h2>Step 4: Test Voice Output</h2>
+
+            <p>Ask your AI assistant to say something! This tests the TTS setup.</p>
+            
+            <pre><code class="language-bash"># In OpenClaw chat
+/tts Hello, can you hear me?</code></pre>
+
+            <p>You should hear the response spoken by your chosen Piper voice.</p>
+
+            <h2>What You've Done</h2>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>✅ Installed Piper TTS locally</li>
+                <li>✅ Configured OpenClaw to use Piper for speech</li>
+                <li>✅ Tested voice output</li>
+            </ul>
+            
+            <div class="next-guide">
+                <h3>Next: Private Memory</h3>
+                <p>Learn to set up local, private embeddings for your AI's memory.</p>
+                <a href="guide-04-memory.html">Continue to Guide 4 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

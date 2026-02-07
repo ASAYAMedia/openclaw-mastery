@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide 6: Add 20+ Tools — OpenClaw Mastery</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .back-link {
+            color: #667eea;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .meta {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #764ba2;
+            margin: 30px 0 15px;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #333;
+            margin: 25px 0 10px;
+            font-size: 1.2em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .affiliate-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .affiliate-box a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .tool-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .tool-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .complete-box {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .complete-box h3 {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to All Guides</a>
+        
+        <h1>Guide 6: Add 20+ Tools</h1>
+        <p class="meta">⏱️ 90 minutes | 💰 Free | 🎯 Advanced</p>
+        
+        <div class="content">
+            <p>Supercharge your AI assistant with essential CLI tools. From media processing to development workflows, these tools turn your assistant into a productivity powerhouse.</p>
+            
+            <h2>What You'll Install</h2>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>✅ FFmpeg — Video/audio processing</li>
+                <li>✅ GitHub CLI — Repository management</li>
+                <li>✅ yt-dlp — YouTube/media downloading</li>
+                <li>✅ Whisper — Speech-to-text</li>
+                <li>✅ And 16+ more essential tools</li>
+            </ul>
+            
+            <div class="affiliate-box">
+                <h3>🚀 Development Environment</h3>
+                <p>These tools work on Windows, macOS, and Linux. Windows users should install WSL2 for the best experience with Linux-based tools.</p>
+                <a href="https://docs.microsoft.com/en-us/windows/wsl/install" target="_blank">Install WSL2</a>
+            </div>
+
+            <h2>Step 1: Media Processing Tools</h2>
+            
+            <h3>FFmpeg (Essential)</h3>
+            <p>The gold standard for video/audio processing. Your AI can convert, compress, edit, and analyze media files.</p>
+            <pre><code># Windows (via winget)
+winget install Gyan.FFmpeg
+
+# macOS
+brew install ffmpeg
+
+# Linux (Ubuntu/Debian)
+sudo apt update && sudo apt install ffmpeg
+
+# Verify installation
+ffmpeg -version</code></pre>
+            
+            <div class="tip">
+                💡 <strong>Common Uses:</strong> Convert video formats, extract audio from video, compress files for sharing, create thumbnails.
+            </div>
+            
+            <h3>yt-dlp (Media Downloader)</h3>
+            <p>Download videos and audio from YouTube and 1000+ other sites. Perfect for content analysis and archiving.</p>
+            <pre><code># Install via pip (works on all platforms)
+pip install yt-dlp
+
+# Or on macOS/Linux with brew
+brew install yt-dlp
+
+# Download a video
+yt-dlp "https://youtube.com/watch?v=..."
+
+# Extract audio only
+yt-dlp -x --audio-format mp3 "https://youtube.com/watch?v=..."</code></pre>
+            
+            <h3>Whisper (Speech-to-Text)</h3>
+            <p>OpenAI's Whisper for transcribing audio. Local processing option available.</p>
+            <pre><code># Install
+pip install openai-whisper
+
+# Basic usage
+whisper audio_file.mp3 --model medium
+
+# Supported formats: mp3, wav, m4a, flac, and more</code></pre>
+
+            <h2>Step 2: Development Tools</h2>
+            
+            <h3>GitHub CLI (gh)</h3>
+            <p>Manage repositories, issues, PRs, and workflows directly from the command line.</p>
+            <pre><code># Windows
+winget install GitHub.cli
+
+# macOS
+brew install gh
+
+# Linux
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update && sudo apt install gh
+
+# Authenticate
+gh auth login
+
+# Clone a repo
+gh repo clone owner/repo</code></pre>
+            
+            <h3>Git (Version Control)</h3>
+            <p>You probably already have this, but ensure it's configured:</p>
+            <pre><code># Configure git
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Create SSH key for GitHub
+ssh-keygen -t ed25519 -C "your.email@example.com"
+cat ~/.ssh/id_ed25519.pub</code></pre>
+
+            <h2>Step 3: Data & File Tools</h2>
+            
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>📊 jq</h4>
+                    <p>JSON processor. Essential for API responses.</p>
+                    <code>brew install jq</code>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>📈 fzf</h4>
+                    <p>Fuzzy finder for files and command history.</p>
+                    <code>brew install fzf</code>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>📋 bat</h4>
+                    <p>Enhanced cat with syntax highlighting.</p>
+                    <code>brew install bat</code>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>🔍 ripgrep (rg)</h4>
+                    <p>Fast code search. Better than grep.</p>
+                    <code>brew install ripgrep</code>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>📁 tree</h4>
+                    <p>Display directory structures.</p>
+                    <code>brew install tree</code>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>🗜️ 7-Zip</h4>
+                    <p>Compression/decompression tool.</p>
+                    <code>winget install 7zip.7zip</code>
+                </div>
+            </div>
+            
+            <h3>Python Data Science Stack</h3>
+            <pre><code># Essential Python packages
+pip install pandas numpy matplotlib seaborn jupyter
+
+# For computer vision
+pip install opencv-python pillow
+
+# For web scraping
+pip install requests beautifulsoup4 scrapy
+
+# For APIs
+pip install fastapi uvicorn</code></pre>
+
+            <h2>Step 4: Configure Tools in OpenClaw</h2>
+            
+            <p>Edit your OpenClaw config to enable these tools:</p>
+            <pre><code>{
+  "commands": {
+    "bash": true,
+    "restart": true
+  },
+  "tools": {
+    "web": {
+      "search": { "enabled": true },
+      "fetch": { "enabled": true }
+    },
+    "media": {
+      "enabled": true,
+      "ffmpeg": "C:\\Path\\To\\ffmpeg.exe"
+    }
+  }
+}</code></pre>
+
+            <h2>Complete Tool List</h2>
+            
+            <p>Here's everything you should have installed:</p>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>FFmpeg — Video/audio processing</li>
+                <li>yt-dlp — Media downloading</li>
+                <li>Whisper — Speech-to-text</li>
+                <li>GitHub CLI (gh) — GitHub management</li>
+                <li>Git — Version control</li>
+                <li>jq — JSON processor</li>
+                <li>fzf — Fuzzy finder</li>
+                <li>bat — Better cat</li>
+                <li>ripgrep — Fast search</li>
+                <li>tree — Directory visualization</li>
+                <li>7-Zip — Compression</li>
+                <li>curl — HTTP requests</li>
+                <li>wget — File downloading</li>
+                <li>Python 3.x — Scripting</li>
+                <li>Node.js — JavaScript runtime</li>
+                <li>npm/ yarn — Package managers</li>
+                <li>Docker — Containerization</li>
+                <li>VS Code CLI (code) — Editor</li>
+                <li>htop — System monitor</li>
+                <li>neofetch — System info</li>
+            </ol>
+
+            <div class="complete-box">
+                <h3>🎉 Congratulations!</h3>
+                <p>You've built a complete AI assistant with:</p>
+                <p>✅ OpenClaw platform<br>
+                ✅ Multi-platform messaging<br>
+                ✅ Voice control<br>
+                ✅ Private memory<br>
+                ✅ Automation & scheduling<br>
+                ✅ 20+ powerful tools</p>
+                <p style="margin-top: 20px;"><strong>Your AI assistant is now a productivity powerhouse!</strong></p>
+            </div>
+            
+            <h2>What's Next?</h2>
+            
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>🚀 <strong>Deploy to the cloud</strong> — Use DigitalOcean to keep your bot online 24/7</li>
+                <li>🔒 <strong>Add more security</strong> — Set up VPN, firewall rules</li>
+                <li>🤖 <strong>Build custom skills</strong> — Create reusable automation workflows</li>
+                <li>📊 <strong>Monitor performance</strong> — Add uptime monitoring and logging</li>
+                <li>🌐 <strong>Share your project</strong> — Document and open-source your setup</li>
+            </ul>
+            
+            <p style="margin-top: 30px; text-align: center;">
+                <strong>Questions or need help?</strong><br>
+                Join the OpenClaw community on <a href="https://discord.com/invite/clawd">Discord</a> or find me on Telegram!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

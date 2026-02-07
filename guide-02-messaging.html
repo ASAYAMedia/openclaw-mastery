@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide 2: Connect Messaging — OpenClaw Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to All Guides</a>
+        
+        <h1>Guide 2: Connect Messaging</h1>
+        <p class="meta">⏱️ 45 minutes | 💰 Free | 🎯 Beginner</p>
+        
+        <div class="content">
+            <p>Chat with your AI assistant from anywhere. Connect Telegram, WhatsApp, Discord, and more. Your assistant follows you across all your favorite apps.</p>
+            
+            <h2>What You'll Build</h2>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>✅ Telegram bot (2-way messaging, voice, photos)</li>
+                <li>✅ WhatsApp integration (via QR scan)</li>
+                <li>✅ Discord bot for servers</li>
+                <li>✅ Unified inbox — all messages in one place</li>
+            </ul>
+            
+            <h2>Step 1: Telegram (Easiest)</h2>
+            
+            <h3>Create Your Bot</h3>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Open Telegram, search for <strong>@BotFather</strong></li>
+                <li>Click Start, then type <code>/newbot</code></li>
+                <li>Name your bot (e.g., "MyAI Assistant")</li>
+                <li>Choose a username (must end in "bot", e.g., "myai_claw_bot")</li>
+                <li>Copy the HTTP API token</li>
+            </ol>
+            
+            <h3>Configure OpenClaw</h3>
+            <pre><code>{
+  "channels": {
+    "telegram": {
+      "botToken": "123456789:YOUR_TOKEN_HERE",
+      "enabled": true
+    }
+  }
+}</code></pre>
+            
+            <div class="tip">
+                💡 Find your personal chat ID: Message your bot, then visit <code>https://api.telegram.org/botYOUR_TOKEN/getUpdates</code> — look for "chat":{"id":12345678
+            </div>
+            
+            <h2>Step 2: WhatsApp (QR Code)</h2>
+            
+            <p>WhatsApp requires linking via QR code scan:</p>
+            
+            <pre><code># In OpenClaw
+openclaw whatsapp login</code></pre>
+            
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Run the command above</li>
+                <li>A QR code will appear (or a link to view it)</li>
+                <li>Open WhatsApp on your phone</li>
+                <li>Settings → Linked Devices → Link a Device</li>
+                <li>Scan the QR code</li>
+                <li>Done! Your AI can now read/send WhatsApp messages</li>
+            </ol>
+            
+            <div class="warning">
+                ⚠️ <strong>WhatsApp Limitation:</strong> You can only have one linked device for WhatsApp Web. If you use WhatsApp Web on your computer, you'll need to re-link when switching.
+            </div>
+            
+            <h2>Step 3: Discord Server Bot</h2>
+            
+            <h3>Create Discord Application</h3>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Go to <a href="https://discord.com/developers/applications">Discord Developer Portal</a></li>
+                <li>Click "New Application", name it</li>
+                <li>Go to "Bot" tab → "Add Bot"</li>
+                <li>Copy the bot token (click "Reset Token" if needed)</li>
+                <li>Enable "Message Content Intent" (critical!)</li>
+            </ol>
+            
+            <h3>Invite Bot to Server</h3>
+            <ol style="margin: 15px 0; padding-left: 30px;">
+                <li>Go to OAuth2 → URL Generator</li>
+                <li>Scopes: <code>bot</code>, <code>applications.commands</code></li>
+                <li>Bot Permissions: Send Messages, Read Messages, Connect, Speak</li>
+                <li>Copy the generated URL</li>
+                <li>Open in browser, select your server</li>
+            </ol>
+            
+            <h3>Configure OpenClaw</h3>
+            <pre><code>{
+  "channels": {
+    "discord": {
+      "botToken": "YOUR_DISCORD_TOKEN",
+      "enabled": true
+    }
+  }
+}</code></pre>
+            
+            <h2>Unified Experience</h2>
+            
+            <p>Once connected, you can:</p>
+            <ul style="margin: 15px 0; padding-left: 30px;">
+                <li>📱 Text from Telegram on your phone</li>
+                <li>💬 Get WhatsApp notifications from your AI</li>
+                <li>🎙️ Use voice in Discord</li>
+                <li>🔄 All conversations sync to the same memory</li>
+            </ul>
+            
+            <div class="next-guide">
+                <h3>Next: Voice Control</h3>
+                <p>Add real-time voice chat with neural text-to-speech.</p>
+                <a href="guide-03-voice.html">Continue to Guide 3 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
