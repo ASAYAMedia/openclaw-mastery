@@ -10,48 +10,52 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .back-link {
-            color: #667eea;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
         }
         h1 {
             font-size: 2.5em;
-            color: #667eea;
             margin-bottom: 10px;
         }
-        .meta {
-            color: #666;
-            margin-bottom: 30px;
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            display: inline-block;
+            margin-bottom: 20px;
         }
+        .back-link:hover { opacity: 1; }
         .content {
             background: white;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
         h2 {
-            color: #764ba2;
+            color: #667eea;
             margin: 30px 0 15px;
             font-size: 1.5em;
         }
         h3 {
-            color: #333;
+            color: #764ba2;
             margin: 25px 0 10px;
             font-size: 1.2em;
         }
+        p { margin-bottom: 15px; }
         code {
             background: #f4f4f4;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 2px 6px;
+            border-radius: 3px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
@@ -61,19 +65,12 @@
             padding: 20px;
             border-radius: 10px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         pre code {
             background: none;
             padding: 0;
             color: inherit;
-        }
-        .tip {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 5px;
         }
         .warning {
             background: #fff3cd;
@@ -82,137 +79,382 @@
             margin: 20px 0;
             border-radius: 5px;
         }
-        .affiliate-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
         }
-        .affiliate-box a {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 15px;
+        ul, ol {
+            margin: 15px 0 15px 30px;
         }
-        .next-guide {
-            background: #667eea;
-            color: white;
+        li { margin-bottom: 8px; }
+        .step {
+            background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            margin-top: 40px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
         }
-        .next-guide a {
+        .step-number {
+            display: inline-block;
+            background: #667eea;
             color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
             font-weight: bold;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to All Guides</a>
-        
-        <h1>Guide 3: Voice Control</h1>
-        <p class="meta">⏱️ 60 minutes | 💰 Free (uses local models) | 🎯 Intermediate</p>
+        <header>
+            <a href="index.html" class="back-link">← Back to All Guides</a>
+            <h1>🎙️ Guide 3: Voice Control</h1>
+            <p>Add real-time voice chat to your AI assistant</p>
+        </header>
         
         <div class="content">
-            <p>Give your AI assistant a voice! In this guide, you'll set up neural text-to-speech (TTS) using a local model and enable voice input for commands.</p>
+            <div class="warning">
+                <strong>Difficulty:</strong> Intermediate | <strong>Time:</strong> 45 minutes | <strong>Prerequisites:</strong> Guides 1 & 2 completed
+            </div>
             
-            <h2>What You'll Set Up</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ Offline neural TTS with Piper</li>
-                <li>✅ Voice commands via microphone</li>
-                <li>✅ Speaking responses from your AI</li>
+            <p>Voice control transforms your text-based AI into a hands-free assistant you can talk to naturally. In this guide, we'll set up:</p>
+            <ul>
+                <li><strong>Piper TTS</strong> — Fast, local neural text-to-speech</li>
+                <li><strong>Whisper</strong> — OpenAI's speech recognition (or faster alternatives)</li>
+                <li><strong>Voice activity detection</strong> — Know when you're speaking</li>
+                <li><strong>Push-to-talk or continuous listening modes</strong></li>
             </ul>
             
-            <div class="affiliate-box">
-                <h3>🚀 Piper TTS</h3>
-                <p>Piper is a fast, local neural TTS system. Perfect for privacy and offline use.</p>
-                <p><strong>You can download voices and executables freely.</strong></p>
-                <a href="https://github.com/Kilian/piper">Explore Piper TTS</a>
-            </div>
-
+            <h2>Why Local Voice?</h2>
+            <p>Most voice assistants (Siri, Alexa, Google) send your voice to the cloud. With OpenClaw + Piper + Whisper, everything stays on your machine:</p>
+            <ul>
+                <li>✅ <strong>Privacy</strong> — Your voice never leaves your device</li>
+                <li>✅ <strong>Speed</strong> — No network latency, instant responses</li>
+                <li>✅ <strong>Offline</strong> — Works without internet</li>
+                <li>✅ <strong>Customizable</strong> — Train your own voice models</li>
+            </ul>
+            
             <h2>Step 1: Install Piper TTS</h2>
             
-            <h3>Download Piper</h3>
-            <p>Download the latest release from the <a href="https://github.com/Kilian/piper/releases">Piper releases page</a>. You'll need the executable for your OS (e.g., `piper.exe` for Windows, `piper` for Linux/macOS).</p>
-            <p>Place the executable in a convenient location, e.g., `C:\Temp\piper\piper.exe`.</p>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Download Piper</strong>
+                <p>Piper is a fast, local neural TTS engine. Get it from the releases page:</p>
+                <pre><code># Windows (PowerShell)
+# Download from: https://github.com/rhasspy/piper/releases
+# Extract to C:\Tools\piper\
+
+# macOS
+brew install piper-tts
+
+# Linux
+pip3 install piper-tts</code></pre>
+            </div>
             
-            <h3>Download Voice Model</h3>
-            <p>Choose a voice model from the Piper releases. For English, a good start is `en_US-lessac-medium.onnx`. Download it and place it in the same directory as the executable.</p>
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Download a Voice Model</strong>
+                <p>Piper uses compact neural voice models (~50-100MB each). Download one:</p>
+                <pre><code># Download voice model (example: English, medium quality)
+# Windows
+wget https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/en/en_US/amy/medium/en_US-amy-medium.onnx
+wget https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/en/en_US/amy/medium/en_US-amy-medium.onnx.json
+
+# Place in your OpenClaw workspace: workspace/voices/</code></pre>
+                <p><strong>Pro tip:</strong> Try different voices! Popular options: <code>amy</code>, <code>ryan</code>, <code>libritts</code>, <code>lessac</code></p>
+            </div>
+            
+            <h2>Step 2: Test Piper</h2>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Verify Installation</strong>
+                <pre><code># Test Piper directly
+echo "Hello from OpenClaw" | piper --model voices/en_US-amy-medium.onnx --output_file test.wav
+
+# Play the result (Windows)
+start test.wav
+
+# Play (macOS)
+afplay test.wav
+
+# Play (Linux)
+aplay test.wav</code></pre>
+                <p>You should hear a natural-sounding voice say "Hello from OpenClaw"</p>
+            </div>
+            
+            <h2>Step 3: Add Speech Recognition (Whisper)</h2>
+            
+            <p>We need to convert your speech to text. You have two options:</p>
+            
+            <h3>Option A: OpenAI Whisper (Most Accurate, Slower)</h3>
+            <pre><code># Install whisper
+pip3 install openai-whisper
+
+# Or faster-whisper for better performance
+pip3 install faster-whisper</code></pre>
+            
+            <h3>Option B: Whisper.cpp (Fastest, Local Only)</h3>
+            <pre><code># Download whisper.cpp binary from:
+# https://github.com/ggerganov/whisper.cpp/releases
+
+# Windows example (PowerShell)
+wget https://github.com/ggerganov/whisper.cpp/releases/download/v1.5.4/whisper-bin-x64.zip
+Expand-Archive whisper-bin-x64.zip -DestinationPath C:\Tools\whisper\</code></pre>
+            
             <div class="tip">
-                💡 <strong>Custom Voices:</strong> Piper supports many languages and voices. Explore them on the official site!
+                <strong>Recommendation:</strong> Use <code>faster-whisper</code> for the best balance of speed and accuracy. It's 4x faster than original Whisper with minimal quality loss.
             </div>
             
-            <h2>Step 2: Configure OpenClaw for TTS</h2>
-
-            <p>Edit your OpenClaw config file (`~/.openclaw/openclaw.json`).</p>
+            <h2>Step 4: Create the Voice Bridge</h2>
             
-            <h3>Add Piper TTS Configuration</h3>
-            <pre><code class="language-json">{
-  "tools": {
-    "media": {
-      "audio": {
-        "enabled": true,
-        "models": [
-          {
-            "provider": "piper",
-            "type": "cli",
-            "command": "C:\\Temp\\piper\\piper.exe", 
-            "language": "en-US",
-            "voice": "en_US-lessac-medium.onnx",
-            "output_file": "{output}",
-            "espeak_data": "C:\\Temp\\piper\\piper\\espeak-ng-data"
-          }
-        ]
-      }
-    }
-  }
-}</code></pre>
-            <div class="warning">
-                ⚠️ <strong>Paths:</strong> Make sure the `command`, `voice`, and `espeak_data` paths exactly match where you installed Piper and its model.
+            <p>Now we'll create a Python script that connects everything. Save this as <code>voice_bridge.py</code> in your OpenClaw workspace:</p>
+            
+            <pre><code>#!/usr/bin/env python3
+"""
+Voice Bridge for OpenClaw
+Handles audio input → speech recognition → AI → text-to-speech
+"""
+
+import subprocess
+import tempfile
+import os
+import wave
+import sounddevice as sd
+import numpy as np
+import queue
+import threading
+import time
+
+class VoiceBridge:
+    def __init__(self):
+        self.piper_model = "voices/en_US-amy-medium.onnx"
+        self.sample_rate = 22050
+        self.listening = False
+        
+    def record_audio(self, duration=5):
+        """Record audio from microphone"""
+        print(f"🎙️ Recording for {duration} seconds...")
+        
+        # Record audio
+        audio_data = sd.rec(
+            int(duration * self.sample_rate),
+            samplerate=self.sample_rate,
+            channels=1,
+            dtype=np.float32
+        )
+        sd.wait()
+        
+        # Save to temp file
+        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as f:
+            with wave.open(f.name, 'wb') as wav:
+                wav.setnchannels(1)
+                wav.setsampwidth(2)
+                wav.setframerate(self.sample_rate)
+                wav.writeframes((audio_data * 32767).astype(np.int16).tobytes())
+            return f.name
+    
+    def transcribe(self, audio_file):
+        """Convert speech to text using whisper"""
+        try:
+            from faster_whisper import WhisperModel
+            
+            model = WhisperModel("base", device="cpu", compute_type="int8")
+            segments, info = model.transcribe(audio_file, beam_size=5)
+            
+            text = " ".join([segment.text for segment in segments])
+            return text.strip()
+        except Exception as e:
+            print(f"Transcription error: {e}")
+            return None
+    
+    def speak(self, text):
+        """Convert text to speech using Piper"""
+        print(f"🔊 Speaking: {text[:50]}...")
+        
+        # Generate speech
+        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as f:
+            output_file = f.name
+        
+        # Run piper
+        process = subprocess.Popen(
+            ["piper", "--model", self.piper_model, "--output_file", output_file],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        process.communicate(text.encode())
+        
+        # Play audio
+        self.play_audio(output_file)
+        
+        # Cleanup
+        os.unlink(output_file)
+    
+    def play_audio(self, file_path):
+        """Play WAV file"""
+        import soundfile as sf
+        data, samplerate = sf.read(file_path)
+        sd.play(data, samplerate)
+        sd.wait()
+    
+    def voice_loop(self):
+        """Main voice interaction loop"""
+        print("🎙️ Voice mode active. Press Ctrl+C to exit.")
+        print("Commands:")
+        print("  [Enter] - Start recording (5 seconds)")
+        print("  'q' + [Enter] - Quit")
+        
+        while True:
+            try:
+                cmd = input("\nPress Enter to speak (or 'q' to quit): ")
+                
+                if cmd.lower() == 'q':
+                    break
+                
+                # Record
+                audio_file = self.record_audio(duration=5)
+                
+                # Transcribe
+                text = self.transcribe(audio_file)
+                os.unlink(audio_file)
+                
+                if not text:
+                    print("❌ Couldn't understand audio")
+                    continue
+                
+                print(f"🗣️ You said: {text}")
+                
+                # Send to OpenClaw AI (you'll integrate this)
+                # For now, just echo back
+                response = f"You said: {text}"
+                
+                # Speak response
+                self.speak(response)
+                
+            except KeyboardInterrupt:
+                break
+            except Exception as e:
+                print(f"Error: {e}")
+        
+        print("\n👋 Voice mode disabled")
+
+if __name__ == "__main__":
+    bridge = VoiceBridge()
+    bridge.voice_loop()</code></pre>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Install Dependencies</strong>
+                <pre><code>pip3 install sounddevice soundfile numpy faster-whisper</code></pre>
             </div>
+            
+            <h2>Step 5: Test the Voice Bridge</h2>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Run the Script</strong>
+                <pre><code>python voice_bridge.py</code></pre>
+                <p>Press <strong>Enter</strong> to start recording, speak for 5 seconds, then hear your AI respond!</p>
+            </div>
+            
+            <h2>Step 6: Connect to OpenClaw</h2>
+            
+            <p>Now integrate with your OpenClaw assistant. Update the <code>voice_bridge.py</code> to send transcribed text to your AI:</p>
+            
+            <pre><code># Replace the echo response with actual AI call
+# In the transcribe section, add:
 
-            <h2>Step 3: Voice Input (Microphone)</h2>
+from openclaw_client import OpenClawClient  # You'll need to create this
 
-            <p>OpenClaw can use your system's default microphone for input. Most messaging platforms (Telegram, Discord bots) will automatically handle voice messages. For direct commands involving voice, OpenClaw uses system defaults.</p>
+# Initialize OpenClaw connection
+client = OpenClawClient()
 
-            <pre><code class="language-bash"># Example: Sending a voice message via Telegram
-# (This is handled by the platform integration, not direct command)
-openclaw message --channel telegram --action send --message "This is a voice message" --asVoice</code></pre>
+# Get AI response
+response = client.chat(text)
 
+# Speak it
+self.speak(response)</code></pre>
+            
             <div class="tip">
-                💡 <strong>Node Support:</strong> If using OpenClaw on a less common OS or environment, you might need to configure audio input drivers. Check OpenClaw documentation for your specific setup.
+                <strong>Shortcut:</strong> For now, you can use the <code>sessions_send</code> tool inside OpenClaw to pipe voice input to your main AI session. Check the OpenClaw docs for session management.
             </div>
-
-            <h2>Step 4: Test Voice Output</h2>
-
-            <p>Ask your AI assistant to say something! This tests the TTS setup.</p>
             
-            <pre><code class="language-bash"># In OpenClaw chat
-/tts Hello, can you hear me?</code></pre>
+            <h2>Advanced: Continuous Listening Mode</h2>
+            
+            <p>Want hands-free operation? Add voice activity detection (VAD):</p>
+            
+            <pre><code>pip3 install webrtcvad
 
-            <p>You should hear the response spoken by your chosen Piper voice.</p>
+# Add to voice_bridge.py:
+import webrtcvad
 
-            <h2>What You've Done</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ Installed Piper TTS locally</li>
-                <li>✅ Configured OpenClaw to use Piper for speech</li>
-                <li>✅ Tested voice output</li>
+class ContinuousListener:
+    def __init__(self):
+        self.vad = webrtcvad.Vad(3)  # Aggressiveness 0-3
+        
+    def is_speech(self, audio_chunk):
+        return self.vad.is_speech(audio_chunk, self.sample_rate)</code></pre>
+            
+            <p>This detects when you're speaking and automatically triggers recording — no button press needed.</p>
+            
+            <h2>Next Steps</h2>
+            
+            <ul>
+                <li>✅ <strong>Customize voices</strong> — Download different Piper models for variety</li>
+                <li>✅ <strong>Add wake word</strong> — Use Porcupine or Snowboy for "Hey Assistant" activation</li>
+                <li>✅ <strong>Optimize latency</strong> — Use Whisper.cpp for sub-second transcription</li>
+                <li>✅ <strong>Multi-language</strong> — Piper supports 20+ languages</li>
             </ul>
             
-            <div class="next-guide">
-                <h3>Next: Private Memory</h3>
-                <p>Learn to set up local, private embeddings for your AI's memory.</p>
-                <a href="guide-04-memory.html">Continue to Guide 4 →</a>
+            <div class="tip">
+                <strong>Recommended Affiliate:</strong> Building voice apps? Check out <a href="https://shopify.pxf.io/c/6963612/1945365/13624" target="_blank">Shopify</a> to monetize your voice assistant skills through apps and integrations!
             </div>
+            
+            <h2>Troubleshooting</h2>
+            
+            <h3>"No audio input detected"</h3>
+            <ul>
+                <li>Check microphone permissions (Windows: Privacy settings → Microphone)</li>
+                <li>Test with: <code>python -m sounddevice</code></li>
+                <li>Try specifying device: <code>sd.default.device = 1</code></li>
+            </ul>
+            
+            <h3>"Piper sounds robotic"</h3>
+            <ul>
+                <li>Use "high" quality models instead of "medium"</li>
+                <li>Adjust speaking rate with <code>--length-scale 1.0</code></li>
+                <li>Try different voices — some sound more natural than others</li>
+            </ul>
+            
+            <h3>"Whisper is too slow"</h3>
+            <ul>
+                <li>Use <code>faster-whisper</code> with <code>compute_type="int8"</code></li>
+                <li>Try smaller models: <code>tiny</code> or <code>base</code> instead of <code>small</code></li>
+                <li>Whisper.cpp with GPU is 10x faster than Python version</li>
+            </ul>
+            
+            <p style="margin-top: 40px; text-align: center;">
+                <a href="guide-04-memory.html" style="display: inline-block; background: #667eea; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold;">Next: Guide 4 — Private Memory →</a>
+            </p>
         </div>
+        
+        <footer>
+            <p>© 2026 OpenClaw Mastery — <a href="index.html" style="color: white;">Back to Home</a></p>
+        </footer>
     </div>
 </body>
 </html>

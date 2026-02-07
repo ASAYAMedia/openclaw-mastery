@@ -10,48 +10,52 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .back-link {
-            color: #667eea;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
         }
         h1 {
             font-size: 2.5em;
-            color: #667eea;
             margin-bottom: 10px;
         }
-        .meta {
-            color: #666;
-            margin-bottom: 30px;
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            display: inline-block;
+            margin-bottom: 20px;
         }
+        .back-link:hover { opacity: 1; }
         .content {
             background: white;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
         h2 {
-            color: #764ba2;
+            color: #667eea;
             margin: 30px 0 15px;
             font-size: 1.5em;
         }
         h3 {
-            color: #333;
+            color: #764ba2;
             margin: 25px 0 10px;
             font-size: 1.2em;
         }
+        p { margin-bottom: 15px; }
         code {
             background: #f4f4f4;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 2px 6px;
+            border-radius: 3px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
@@ -61,19 +65,12 @@
             padding: 20px;
             border-radius: 10px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         pre code {
             background: none;
             padding: 0;
             color: inherit;
-        }
-        .tip {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 5px;
         }
         .warning {
             background: #fff3cd;
@@ -82,128 +79,547 @@
             margin: 20px 0;
             border-radius: 5px;
         }
-        .affiliate-box {
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        li { margin-bottom: 8px; }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .highlight-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 25px;
             border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
+            margin: 25px 0;
         }
-        .affiliate-box a {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .next-guide {
-            background: #667eea;
+        .highlight-box h3 {
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 40px;
+            margin-top: 0;
         }
-        .next-guide a {
+        footer {
+            text-align: center;
+            padding: 40px;
             color: white;
-            font-weight: bold;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to All Guides</a>
-        
-        <h1>Guide 4: Private Memory</h1>
-        <p class="meta">⏱️ 45 minutes | 💰 Free (local model) | 🎯 Intermediate</p>
+        <header>
+            <a href="index.html" class="back-link">← Back to All Guides</a>
+            <h1>🧠 Guide 4: Private Memory</h1>
+            <p>Give your AI assistant perfect recall — 100% private</p>
+        </header>
         
         <div class="content">
-            <p>Remembering is crucial for an AI assistant. In this guide, you'll set up a fully private, local memory system using Nomic Embeddings and OpenClaw's memory tools.</p>
+            <div class="warning">
+                <strong>Difficulty:</strong> Intermediate | <strong>Time:</strong> 60 minutes | <strong>Prerequisites:</strong> Guides 1-3
+            </div>
             
-            <h2>Why Local Embeddings?</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>🔒 <strong>Privacy:</strong> Your data never leaves your machine.</li>
-                <li>🚀 <strong>Performance:</strong> Fast retrieval without network latency.</li>
-                <li>💰 <strong>Cost-Effective:</strong> No API fees for embeddings.</li>
+            <div class="highlight-box">
+                <h3>🎯 What You'll Build</h3>
+                <p>An AI that remembers everything — conversations, facts, documents, code snippets — forever. All stored locally, never in the cloud.</p>
+            </div>
+            
+            <p>Most AI assistants have goldfish memory. They forget what you said 10 minutes ago. In this guide, we'll give your OpenClaw assistant <strong>unlimited, searchable, persistent memory</strong> using:</p>
+            <ul>
+                <li><strong>nomic-embed</strong> — Local embeddings (converts text to searchable vectors)</li>
+                <li><strong>ChromaDB</strong> — Vector database for fast similarity search</li>
+                <li><strong>Local storage</strong> — SQLite or file-based persistence</li>
+                <li><strong>Automatic context injection</strong> — Relevant memories added to every prompt</li>
             </ul>
             
-            <h2>Step 1: Download Nomic Embeddings Model</h2>
+            <h2>Why Local Memory Matters</h2>
+            <table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
+                <tr style="background: #f8f9fa;">
+                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid #667eea;">Feature</th>
+                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid #667eea;">Cloud AI (ChatGPT)</th>
+                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid #667eea;">OpenClaw + Local Memory</th>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">Privacy</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">❌ Data sent to OpenAI</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">✅ Never leaves your machine</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">Retention</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">❌ Limited context window</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">✅ Infinite memory</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">Search</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">❌ Can't search old chats</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">✅ Semantic search everything</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">Offline</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">❌ Requires internet</td>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">✅ Works offline</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px;">Documents</td>
+                    <td style="padding: 12px;">❌ Upload limits</td>
+                    <td style="padding: 12px;">✅ Unlimited documents</td>
+                </tr>
+            </table>
             
-            <h3>Model Details</h3>
-            <p>We'll use <code>nomic-embed-text-v1.f16.gguf</code>. It's a powerful, quantized model suitable for local use.</p>
+            <h2>Step 1: Install nomic-embed</h2>
             
-            <h3>Download Link</h3>
-            <p>From Hugging Face: <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.f16.gguf/resolve/main/nomic-embed-text-v1.f16.gguf?download=true">Download GGUF Model</a></p>
-            
-            <h3>Installation</h3>
-            <p>Save the downloaded file to a known location. For example:</p>
-            <pre><code>C:\Temp\nomic-embed-text-v1.f16.gguf</code></pre>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Install the Embedding Engine</strong>
+                <p>nomic-embed is a fast, local embedding model. It converts text into vectors (numbers) that capture meaning.</p>
+                <pre><code># Install nomic-embed (via Ollama or direct)
+# Option A: Via Ollama (recommended)
+ollama pull nomic-embed-text
+
+# Option B: Python package
+pip3 install nomic
+
+# Option C: For better performance
+pip3 install sentence-transformers</code></pre>
+            </div>
             
             <div class="tip">
-                💡 <strong>Model Size:</strong> This model is around 274MB. Ensure you have enough disk space.
+                <strong>Performance tip:</strong> If you have a GPU, use <code>sentence-transformers</code> with <code>all-MiniLM-L6-v2</code> — it's 100x faster than CPU-only embeddings.
             </div>
             
-            <h2>Step 2: Configure OpenClaw Memory</h2>
+            <h2>Step 2: Set Up ChromaDB</h2>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Install Vector Database</strong>
+                <p>ChromaDB stores your embeddings and performs lightning-fast similarity searches.</p>
+                <pre><code># Install ChromaDB
+pip3 install chromadb
 
-            <p>Edit your OpenClaw config file (`~/.openclaw/openclaw.json`).</p>
+# Create data directory
+mkdir -p workspace/memory/chroma</code></pre>
+            </div>
             
-            <h3>Update `memorySearch` Section</h3>
-            <p>Add or modify the `memorySearch` section to point to your local model.:</p>
+            <h2>Step 3: Build the Memory System</h2>
             
-            <pre><code class="language-json">
-{
-  "agents": {
-    "defaults": {
-      "memorySearch": {
-        "enabled": true,
-        "provider": "local",
-        "local": {
-          "modelPath": "C:\\Temp\\nomic-embed-text-v1.f16.gguf"
-        },
-        "query": {
-          "minScore": 0.7,
-          "maxResults": 10
+            <p>Create a memory module that your AI can call. Save as <code>memory_system.py</code>:</p>
+            
+            <pre><code>#!/usr/bin/env python3
+"""
+Private Memory System for OpenClaw
+100% local, never forgets, semantic search
+"""
+
+import chromadb
+from chromadb.config import Settings
+import hashlib
+import datetime
+import json
+from typing import List, Dict, Optional
+
+class PrivateMemory:
+    def __init__(self, persist_dir: str = "workspace/memory/chroma"):
+        """Initialize private memory with local ChromaDB"""
+        
+        # Create client with persistent storage
+        self.client = chromadb.Client(
+            Settings(
+                chroma_db_impl="duckdb+parquet",
+                persist_directory=persist_dir
+            )
+        )
+        
+        # Get or create collection for conversations
+        self.collection = self.client.get_or_create_collection(
+            name="conversations",
+            metadata={"hnsw:space": "cosine"}  # Best for semantic similarity
+        )
+        
+        # Simple embedding function (replace with nomic-embed)
+        self.embedding_function = self._default_embed
+        
+    def _default_embed(self, texts: List[str]) -> List[List[float]]:
+        """Placeholder embedding — replace with nomic-embed"""
+        # In production, use: nomic.embed(texts) or sentence_transformers
+        import numpy as np
+        # Return random embeddings for demo (replace this!)
+        return [np.random.randn(768).tolist() for _ in texts]
+    
+    def remember(self, text: str, metadata: Optional[Dict] = None) -> str:
+        """
+        Store a memory permanently
+        
+        Args:
+            text: The content to remember
+            metadata: Optional dict with tags, timestamp, source, etc.
+        
+        Returns:
+            memory_id: Unique identifier for this memory
+        """
+        # Generate unique ID
+        memory_id = hashlib.md5(
+            f"{text}{datetime.datetime.now().isoformat()}".encode()
+        ).hexdigest()[:16]
+        
+        # Default metadata
+        meta = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "source": "conversation",
+            "text_preview": text[:100] + "..." if len(text) > 100 else text
         }
-      }
-    }
-  }
-}
-</code></pre>
-            <div class="warning">
-                ⚠️ <strong>Paths:</strong> Ensure `modelPath` exactly matches where you saved the Nomic Embeddings model file.
+        if metadata:
+            meta.update(metadata)
+        
+        # Add to database
+        self.collection.add(
+            ids=[memory_id],
+            documents=[text],
+            metadatas=[meta]
+        )
+        
+        # Persist to disk
+        self.client.persist()
+        
+        return memory_id
+    
+    def recall(self, query: str, n_results: int = 5) -> List[Dict]:
+        """
+        Search memories by semantic similarity
+        
+        Args:
+            query: What to search for
+            n_results: Number of memories to return
+        
+        Returns:
+            List of memories with text, metadata, and relevance score
+        """
+        results = self.collection.query(
+            query_texts=[query],
+            n_results=n_results,
+            include=["documents", "metadatas", "distances"]
+        )
+        
+        memories = []
+        for i in range(len(results["ids"][0])):
+            memories.append({
+                "id": results["ids"][0][i],
+                "text": results["documents"][0][i],
+                "metadata": results["metadatas"][0][i],
+                "relevance": 1 - results["distances"][0][i]  # Convert distance to similarity
+            })
+        
+        return memories
+    
+    def recall_by_time(self, hours: int = 24) -> List[Dict]:
+        """Get memories from last N hours"""
+        from datetime import datetime, timedelta
+        
+        cutoff = (datetime.now() - timedelta(hours=hours)).isoformat()
+        
+        # Query all and filter by timestamp
+        all_memories = self.collection.get()
+        recent = []
+        
+        for i, meta in enumerate(all_memories["metadatas"]):
+            if meta["timestamp"] > cutoff:
+                recent.append({
+                    "id": all_memories["ids"][i],
+                    "text": all_memories["documents"][i],
+                    "metadata": meta
+                })
+        
+        # Sort by timestamp
+        recent.sort(key=lambda x: x["metadata"]["timestamp"], reverse=True)
+        return recent
+    
+    def forget(self, memory_id: str) -> bool:
+        """Delete a specific memory"""
+        try:
+            self.collection.delete(ids=[memory_id])
+            self.client.persist()
+            return True
+        except Exception:
+            return False
+    
+    def get_stats(self) -> Dict:
+        """Get memory statistics"""
+        count = self.collection.count()
+        return {
+            "total_memories": count,
+            "storage_location": "local (private)",
+            "embedding_model": "nomic-embed-text (local)",
+            "search_type": "semantic (cosine similarity)"
+        }
+
+# Integration with OpenClaw
+class OpenClawMemoryBridge:
+    """Bridge to integrate memory with OpenClaw sessions"""
+    
+    def __init__(self):
+        self.memory = PrivateMemory()
+    
+    def on_user_message(self, message: str) -> str:
+        """Process user message and inject relevant memories"""
+        
+        # Store this message for future recall
+        self.memory.remember(message, metadata={"type": "user_message"})
+        
+        # Find relevant past context
+        relevant = self.memory.recall(message, n_results=3)
+        
+        # Build context string
+        context = ""
+        if relevant:
+            context = "\n\nRelevant context from previous conversations:\n"
+            for mem in relevant:
+                context += f"- {mem['text']}\n"
+        
+        # Return message with context
+        return message + context
+    
+    def on_ai_response(self, response: str, user_message: str):
+        """Store AI response linked to user message"""
+        self.memory.remember(response, metadata={
+            "type": "ai_response",
+            "in_response_to": user_message[:50]
+        })
+
+# Example usage
+if __name__ == "__main__":
+    mem = PrivateMemory()
+    
+    # Store some test memories
+    print("💾 Storing test memories...")
+    mem.remember("My favorite color is blue", metadata={"topic": "preferences"})
+    mem.remember("I work as a software engineer at a startup", metadata={"topic": "career"})
+    mem.remember("I prefer Python over JavaScript for backend work", metadata={"topic": "programming"})
+    
+    # Search
+    print("\n🔍 Searching for 'programming language preferences':")
+    results = mem.recall("programming language preferences")
+    for r in results:
+        print(f"  - {r['text']} (relevance: {r['relevance']:.2f})")
+    
+    # Stats
+    print(f"\n📊 {mem.get_stats()}")</code></pre>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Test the Memory System</strong>
+                <pre><code>python memory_system.py</code></pre>
             </div>
             
-            <h2>Step 3: Test Memory Retrieval</h2>
+            <h2>Step 4: Add Real Embeddings with nomic-embed</h2>
             
-            <p>OpenClaw automatically uses the configured memory. To test, you need to populate it first. Try sending a few messages, then search for them:</p>
+            <p>Replace the placeholder embedding with real nomic-embed:</p>
             
-            <pre><code class="language-bash"># After sending some messages to your bot...
+            <pre><code># Update memory_system.py — replace _default_embed with:
 
-# Search for a specific topic
-/memory_search "how to set up discord bots"
+import ollama
 
-# Ask a question that requires recalling past info
-/ask "What was my last instruction regarding income generation?"</code></pre>
+class PrivateMemory:
+    def __init__(self, persist_dir: str = "workspace/memory/chroma"):
+        # ... existing init code ...
+        
+        # Use nomic-embed via Ollama
+        self.embedding_function = self._nomic_embed
+    
+    def _nomic_embed(self, texts: List[str]) -> List[List[float]]:
+        """Generate embeddings using local nomic-embed"""
+        embeddings = []
+        for text in texts:
+            response = ollama.embeddings(
+                model="nomic-embed-text",
+                prompt=text
+            )
+            embeddings.append(response["embedding"])
+        return embeddings</code></pre>
             
-            <p>You should see relevant snippets from your conversation history. If `memorySearch` is `enabled: true`, OpenClaw will use this local memory automatically before answering.</p>
+            <div class="warning">
+                <strong>ChromaDB Note:</strong> The example uses Chroma's built-in embedding. For production, explicitly pass embeddings to <code>collection.add(embeddings=...)</code> with your nomic-embed vectors.
+            </div>
             
-            <h2>What You've Done</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ Downloaded Nomic Embeddings model</li>
-                <li>✅ Configured OpenClaw for local memory retrieval</li>
-                <li>✅ Tested memory search and recall</li>
+            <h2>Step 5: Integrate with OpenClaw</h2>
+            
+            <p>Now wire memory into your OpenClaw flow. Update your main agent file:</p>
+            
+            <pre><code># Add to your OpenClaw agent
+
+from memory_system import OpenClawMemoryBridge
+
+class MemoryEnabledAgent:
+    def __init__(self):
+        self.memory = OpenClawMemoryBridge()
+        # ... your existing AI model setup ...
+    
+    def chat(self, user_message: str) -> str:
+        # 1. Inject relevant memories
+        enriched_message = self.memory.on_user_message(user_message)
+        
+        # 2. Send to AI with context
+        response = self.ai_model.generate(enriched_message)
+        
+        # 3. Store the exchange
+        self.memory.on_ai_response(response, user_message)
+        
+        return response
+
+# Usage
+agent = MemoryEnabledAgent()
+response = agent.chat("What programming languages do I like?")
+# AI can now see past conversations where you mentioned preferences</code></pre>
+            
+            <h2>Step 6: Advanced Memory Features</h2>
+            
+            <h3>Document Ingestion</h3>
+            <p>Let your AI read and remember documents:</p>
+            <pre><code>def ingest_document(self, file_path: str):
+    """Load PDF, TXT, or MD files into memory"""
+    import os
+    
+    if file_path.endswith('.pdf'):
+        # Requires: pip3 install pypdf
+        from pypdf import PdfReader
+        reader = PdfReader(file_path)
+        text = "\n".join([page.extract_text() for page in reader.pages])
+    else:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            text = f.read()
+    
+    # Chunk into smaller pieces for better search
+    chunks = self._chunk_text(text, chunk_size=500)
+    
+    for chunk in chunks:
+        self.remember(chunk, metadata={
+            "source": file_path,
+            "type": "document",
+            "filename": os.path.basename(file_path)
+        })
+    
+    return len(chunks)
+
+def _chunk_text(self, text: str, chunk_size: int = 500) -> List[str]:
+    """Split text into chunks"""
+    sentences = text.replace('. ', '.|').replace('? ', '?|').replace('! ', '!|').split('|')
+    chunks = []
+    current_chunk = []
+    current_length = 0
+    
+    for sentence in sentences:
+        if current_length + len(sentence) > chunk_size and current_chunk:
+            chunks.append(' '.join(current_chunk))
+            current_chunk = [sentence]
+            current_length = len(sentence)
+        else:
+            current_chunk.append(sentence)
+            current_length += len(sentence)
+    
+    if current_chunk:
+        chunks.append(' '.join(current_chunk))
+    
+    return chunks</code></pre>
+            
+            <h3>Memory Summarization</h3>
+            <p>When memory gets large, summarize old conversations:</p>
+            <pre><code>def summarize_old_memories(self, days: int = 7):
+    """Summarize memories older than N days"""
+    old_memories = self.recall_by_time(hours=days*24)
+    
+    if len(old_memories) < 10:
+        return  # Not enough to summarize
+    
+    # Combine old memories
+    combined_text = "\n".join([m["text"] for m in old_memories])
+    
+    # Ask AI to summarize
+    summary_prompt = f"Summarize these past conversations into key facts:\n{combined_text}"
+    summary = self.ai_model.generate(summary_prompt)
+    
+    # Store summary, delete originals
+    self.remember(summary, metadata={
+        "type": "summary",
+        "covers_period": f"{days} days",
+        "original_count": len(old_memories)
+    })
+    
+    for mem in old_memories:
+        self.forget(mem["id"])</code></pre>
+            
+            <h2>Memory Privacy & Security</h2>
+            
+            <div class="highlight-box">
+                <h3>🔒 Your Data Stays Yours</h3>
+                <ul>
+                    <li><strong>Local storage:</strong> Everything in <code>workspace/memory/</code></li>
+                    <li><strong>No cloud:</strong> Embeddings never leave your machine</li>
+                    <li><strong>Encrypted at rest:</strong> ChromaDB supports encryption</li>
+                    <li><strong>Delete anytime:</strong> Just delete the <code>chroma/</code> folder</li>
+                </ul>
+            </div>
+            
+            <h3>Backup Your Memory</h3>
+            <pre><code># Backup (run periodically)
+cp -r workspace/memory ~/backups/openclaw-memory-$(date +%Y%m%d)
+
+# Or use git
+cd workspace/memory
+git init
+git add .
+git commit -m "Memory backup $(date)"</code></pre>
+            
+            <h2>Testing Your Memory</h2>
+            
+            <p>Try this conversation flow:</p>
+            <ol>
+                <li><strong>You:</strong> "My favorite programming language is Python"</li>
+                <li><strong>You:</strong> "What's my favorite language?" → AI should remember "Python"</li>
+                <li><strong>You:</strong> "I changed my mind, it's now Rust"</li>
+                <li><strong>You:</strong> "What languages have I mentioned?" → AI should recall both</li>
+            </ol>
+            
+            <div class="tip">
+                <strong>Recommended Tool:</strong> For advanced document search, <a href="https://marketxls.pxf.io/c/6963612/346913/5139" target="_blank">MarketXLS</a> offers powerful Excel-based research tools that complement your AI's new memory system!
+            </div>
+            
+            <h2>Next Steps</h2>
+            
+            <ul>
+                <li>✅ <strong>Automated ingestion</strong> — Watch a folder and auto-index new documents</li>
+                <li>✅ <strong>Memory decay</strong> — Less relevant memories fade over time</li>
+                <li>✅ <strong>Multi-user support</strong> — Separate memory collections per user</li>
+                <li>✅ <strong>Graph memory</strong> — Link related memories (person → project → deadline)</li>
             </ul>
             
-            <div class="next-guide">
-                <h3>Next: Automation & Cron</h3>
-                <p>Learn to schedule tasks and build background automation workflows.</p>
-                <a href="guide-05-automation.html">Continue to Guide 5 →</a>
-            </div>
+            <p style="margin-top: 40px; text-align: center;">
+                <a href="guide-05-automation.html" style="display: inline-block; background: #667eea; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold;">Next: Guide 5 — Automation & Cron →</a>
+            </p>
         </div>
+        
+        <footer>
+            <p>© 2026 OpenClaw Mastery — <a href="index.html" style="color: white;">Back to Home</a></p>
+        </footer>
     </div>
 </body>
 </html>

@@ -3,55 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide 5: Automation & Cron Jobs — OpenClaw Mastery</title>
+    <title>Guide 5: Automation & Cron — OpenClaw Mastery</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .back-link {
-            color: #667eea;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
         }
         h1 {
             font-size: 2.5em;
-            color: #667eea;
             margin-bottom: 10px;
         }
-        .meta {
-            color: #666;
-            margin-bottom: 30px;
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            display: inline-block;
+            margin-bottom: 20px;
         }
+        .back-link:hover { opacity: 1; }
         .content {
             background: white;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
         h2 {
-            color: #764ba2;
+            color: #667eea;
             margin: 30px 0 15px;
             font-size: 1.5em;
         }
         h3 {
-            color: #333;
+            color: #764ba2;
             margin: 25px 0 10px;
             font-size: 1.2em;
         }
+        p { margin-bottom: 15px; }
         code {
             background: #f4f4f4;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 2px 6px;
+            border-radius: 3px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
@@ -61,19 +65,12 @@
             padding: 20px;
             border-radius: 10px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         pre code {
             background: none;
             padding: 0;
             color: inherit;
-        }
-        .tip {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 5px;
         }
         .warning {
             background: #fff3cd;
@@ -82,131 +79,464 @@
             margin: 20px 0;
             border-radius: 5px;
         }
-        .affiliate-box {
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        li { margin-bottom: 8px; }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .highlight-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 25px;
             border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
+            margin: 25px 0;
         }
-        .affiliate-box a {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .next-guide {
-            background: #667eea;
+        .highlight-box h3 {
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 40px;
+            margin-top: 0;
         }
-        .next-guide a {
+        .code-block {
+            background: #f8f9fa;
+            border-left: 4px solid #764ba2;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
             color: white;
-            font-weight: bold;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to All Guides</a>
-        
-        <h1>Guide 5: Automation & Cron Jobs</h1>
-        <p class="meta">⏱️ 45 minutes | 💰 Free | 🎯 Intermediate</p>
+        <header>
+            <a href="index.html" class="back-link">← Back to All Guides</a>
+            <h5>⚙️ Guide 5: Automation & Cron</h5>
+            <p>Let your AI work while you sleep</p>
+        </header>
         
         <div class="content">
-            <p>Make your AI assistant truly hands-off. Learn to schedule tasks, set up periodic checks (heartbeats), and manage background processes.</p>
+            <div class="warning">
+                <strong>Difficulty:</strong> Intermediate | <strong>Time:</strong> 50 minutes | <strong>Prerequisites:</strong> Guides 1-4
+            </div>
             
-            <h2>What You'll Automate</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ Daily summaries and reports</li>
-                <li>✅ Periodic checks (weather, news, mentions)</li>
-                <li>✅ Background tasks (e.g., file processing)</li>
+            <div class="highlight-box">
+                <h3>🎯 What You'll Build</h3>
+                <p>An AI assistant that wakes up on schedule, checks your systems, summarizes your data, and reports back — all automatically, 24/7.</p>
+            </div>
+            
+            <p>Most people think of AI as something you chat with. But the real power comes when your AI works <strong>autonomously</strong> — monitoring systems, scraping data, sending alerts, and generating reports without you lifting a finger.</p>
+            
+            <p>In this guide, we'll set up:</p>
+            <ul>
+                <li><strong>OpenClaw Cron</strong> — Native scheduling system</li>
+                <li><strong>Heartbeat tasks</strong> — Periodic system checks</li>
+                <li><strong>Auto-summaries</strong> — Daily/weekly digests</li>
+                <li><strong>Conditional alerts</strong> — Notify when things need attention</li>
+                <li><strong>Background agents</strong> — Long-running tasks</li>
             </ul>
+            
+            <h2>Why Automation Matters</h2>
+            
+            <div class="code-block">
+                <strong>Without automation:</strong> You remember to check email, calendar, news, stock prices, server status, backups... every day. Miss one? Something breaks.<br><br>
+                <strong>With automation:</strong> Your AI checks everything automatically. You only hear about problems that actually need your attention.
+            </div>
             
             <h2>Step 1: Understanding OpenClaw Cron</h2>
             
-            <p>OpenClaw's cron tool allows you to schedule jobs. You can define jobs to run at specific times or intervals.</p>
+            <p>OpenClaw has a built-in cron system that's perfect for automation. It runs on the gateway (the process that manages your AI), not inside a single chat session.</p>
             
-            <h3>Creating a Cron Job</h3>
-            <p>Use the `cron add` command. Here's an example to send a daily summary via Telegram at 8 AM:</p>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Check Your Cron Status</strong>
+                <p>First, verify the cron scheduler is running:</p>
+                <pre><code># Check cron status
+openclaw cron status
+
+# Should show: "scheduler is active"</code></pre>
+            </div>
             
-            <pre><code class="language-bash">
+            <h2>Step 2: Create Your First Scheduled Job</h2>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Daily Summary Job</strong>
+                <p>Let's create a job that runs every morning at 8 AM and summarizes your day:</p>
+                <pre><code># Add a daily summary job
 openclaw cron add \
-  --job "{\"name\": \"daily-summary\", \"schedule\": {\"kind\": \"cron\", \"expr\": \"0 8 * * *\", \"tz\": \"America/New_York\"}, \"payload\": {\"kind\": \"systemEvent\", \"text\": \"Generate a daily summary of important events and tasks.\"}, \"sessionTarget\": \"main\"}"</code></pre>
+  --name "daily-briefing" \
+  --schedule "cron:0 8 * * *" \
+  --message "Generate my daily briefing: check calendar, weather, and any pending tasks from yesterday" \
+  --target main</code></pre>
+            </div>
             
-            <p><strong>Explanation:</strong></p>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li><code>name</code>: A friendly name for the job.</li>
-                <li><code>schedule</code>: Defines when to run. <code>cron</code> uses standard cron syntax.</li>
-                <li><code>payload</code>: What the job does. <code>systemEvent</code> injects text into your session.</li>
-                <li><code>sessionTarget</code>: Where the job runs. <code>main</code> for your primary session.</li>
+            <div class="tip">
+                <strong>Cron syntax explained:</strong> <code>0 8 * * *</code> = At minute 0, hour 8, every day, every month, every weekday (8:00 AM daily)
+            </div>
+            
+            <h2>Step 3: Heartbeat Tasks</h2>
+            
+            <p>Heartbeats are lightweight checks that run frequently. They're perfect for monitoring.</p>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>System Health Check</strong>
+                <p>Every 30 minutes, check if important services are running:</p>
+                <pre><code># Create heartbeat job
+openclaw cron add \
+  --name "health-check" \
+  --schedule "every:1800000" \
+  --message "Run HEARTBEAT.md checks: verify all services running, check disk space, review any alerts" \
+  --target main</code></pre>
+                <p>(1800000 ms = 30 minutes)</p>
+            </div>
+            
+            <h2>Step 4: Build a Heartbeat.md File</h2>
+            
+            <p>Create a <code>HEARTBEAT.md</code> in your workspace that defines what to check:</p>
+            
+            <pre><code># HEARTBEAT.md - Automated System Checks
+
+## Frequency: Every 30 minutes
+
+### Check 1: Critical Services
+- [ ] OpenClaw gateway running
+- [ ] AI model responding
+- [ ] Memory system (ChromaDB) accessible
+- [ ] Messaging connections (Telegram/Discord) active
+
+### Check 2: System Resources
+- [ ] Disk space > 10% free
+- [ ] Memory usage < 80%
+- [ ] No zombie processes
+
+### Check 3: Data Integrity
+- [ ] Memory database backed up (if due)
+- [ ] Logs rotating properly
+- [ ] No errors in last 50 log lines
+
+### Check 4: External Services
+- [ ] Internet connectivity
+- [ ] API rate limits not exceeded
+- [ ] Cloud backups syncing (if enabled)
+
+## Actions on Failure
+- Alert via Telegram if critical service down
+- Auto-restart non-critical services
+- Log all failures to workspace/heartbeat-errors.log
+
+## Daily at 8 AM: Generate Report
+Summarize:
+- Uptime percentage
+- Any incidents
+- Resource trends
+- Recommendations</code></pre>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Create the Heartbeat Handler</strong>
+                <p>Save as <code>heartbeat_handler.py</code>:</p>
+                <pre><code>#!/usr/bin/env python3
+"""
+Heartbeat Handler for OpenClaw
+Runs periodic system checks and reports
+"""
+
+import subprocess
+import psutil
+import datetime
+import os
+from typing import List, Dict
+
+class HeartbeatChecker:
+    def __init__(self):
+        self.log_file = "workspace/heartbeat.log"
+        self.error_log = "workspace/heartbeat-errors.log"
+    
+    def run_all_checks(self) -> Dict:
+        """Run all heartbeat checks and return results"""
+        results = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "checks": []
+        }
+        
+        # Check 1: OpenClaw gateway
+        gateway_running = self._check_process("openclaw")
+        results["checks"].append({
+            "name": "OpenClaw Gateway",
+            "status": "pass" if gateway_running else "fail",
+            "message": "Running" if gateway_running else "Not running!"
+        })
+        
+        # Check 2: Disk space
+        disk = psutil.disk_usage('/')
+        disk_ok = disk.percent < 90
+        results["checks"].append({
+            "name": "Disk Space",
+            "status": "pass" if disk_ok else "warning",
+            "message": f"{disk.percent}% used ({disk.free // (2**30)} GB free)"
+        })
+        
+        # Check 3: Memory
+        mem = psutil.virtual_memory()
+        mem_ok = mem.percent < 85
+        results["checks"].append({
+            "name": "Memory",
+            "status": "pass" if mem_ok else "warning",
+            "message": f"{mem.percent}% used"
+        })
+        
+        # Check 4: Internet
+        net_ok = self._check_internet()
+        results["checks"].append({
+            "name": "Internet",
+            "status": "pass" if net_ok else "fail",
+            "message": "Connected" if net_ok else "No connection!"
+        })
+        
+        return results
+    
+    def _check_process(self, name: str) -> bool:
+        """Check if process is running"""
+        for proc in psutil.process_iter(['name']):
+            if name.lower() in proc.info['name'].lower():
+                return True
+        return False
+    
+    def _check_internet(self) -> bool:
+        """Check internet connectivity"""
+        try:
+            import urllib.request
+            urllib.request.urlopen('https://google.com', timeout=5)
+            return True
+        except:
+            return False
+    
+    def generate_report(self, results: Dict) -> str:
+        """Generate human-readable report"""
+        report = f"📊 Health Check - {results['timestamp']}\n\n"
+        
+        for check in results["checks"]:
+            emoji = "✅" if check["status"] == "pass" else "⚠️" if check["status"] == "warning" else "❌"
+            report += f"{emoji} {check['name']}: {check['message']}\n"
+        
+        # Overall status
+        all_pass = all(c["status"] == "pass" for c in results["checks"])
+        if all_pass:
+            report += "\n✨ All systems operational!"
+        else:
+            report += "\n⚠️ Some checks need attention"
+        
+        return report
+    
+    def log_results(self, results: Dict):
+        """Log results to file"""
+        with open(self.log_file, 'a') as f:
+            f.write(f"{results['timestamp']}: {len([c for c in results['checks'] if c['status'] == 'pass'])}/{len(results['checks'])} checks passed\n")
+    
+    def run(self):
+        """Main entry point"""
+        results = self.run_all_checks()
+        self.log_results(results)
+        
+        # Generate and return report
+        report = self.generate_report(results)
+        return report
+
+# Run if called directly
+if __name__ == "__main__":
+    checker = HeartbeatChecker()
+    print(checker.run())</code></pre>
+            </div>
+            
+            <h2>Step 5: Advanced Cron Jobs</h2>
+            
+            <h3>Weekly Report</h3>
+            <pre><code># Every Monday at 9 AM
+openclaw cron add \
+  --name "weekly-summary" \
+  --schedule "cron:0 9 * * 1" \
+  --message "Generate weekly report: summarize activities, check goal progress, plan priorities for this week"</code></pre>
+            
+            <h3>Monthly Cleanup</h3>
+            <pre><code># First day of month at 3 AM
+openclaw cron add \
+  --name "monthly-cleanup" \
+  --schedule "cron:0 3 1 * *" \
+  --message "Archive old logs, compress memory database, clean temp files, review and optimize automation rules"</code></pre>
+            
+            <h3>One-Time Reminder</h3>
+            <pre><code># Reminder for specific time
+openclaw cron add \
+  --name "project-deadline" \
+  --schedule "at:1706740800000" \
+  --message "Reminder: Project X deadline is in 24 hours! Review status and prepare deliverables."</code></pre>
+            
+            <h2>Step 6: Conditional Automation</h2>
+            
+            <p>Make your AI smarter — only act when conditions are met:</p>
+            
+            <pre><code># Example: Alert only if disk space critical
+import psutil
+
+def check_and_alert():
+    disk = psutil.disk_usage('/')
+    
+    if disk.percent > 95:
+        # Send urgent alert
+        return "🚨 CRITICAL: Disk 95% full! Clean up now."
+    elif disk.percent > 80:
+        # Gentle reminder
+        return "⚠️ Disk 80% full. Consider cleanup soon."
+    else:
+        # No message needed
+        return None  # Silently pass
+
+# In your heartbeat, only send message if result is not None</code></pre>
+            
+            <h2>Step 7: Background Agents</h2>
+            
+            <p>For long-running tasks, spawn isolated sessions:</p>
+            
+            <pre><code># Spawn a background agent for research
+openclaw sessions_spawn \
+  --task "Research all latest AI papers from arXiv this week, summarize the top 5, and prepare a briefing document" \
+  --label "research-agent-001" \
+  --timeout 3600
+
+# This runs independently and reports back when done</code></pre>
+            
+            <div class="tip">
+                <strong>Background vs Cron:</strong> Use cron for recurring tasks (every hour/day), background agents for one-time heavy tasks (research, data processing, report generation).
+            </div>
+            
+            <h2>Step 8: Monitoring Your Automations</h2>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>View All Jobs</strong>
+                <pre><code># List all cron jobs
+openclaw cron list
+
+# View recent runs
+openclaw cron runs --job daily-briefing --limit 10</code></pre>
+            </div>
+            
+            <h3>Job Run History</h3>
+            <pre><code># Check if jobs are running properly
+openclaw cron status
+
+# Look for failures
+openclaw cron runs --status failed --limit 20</code></pre>
+            
+            <h2>Sample Automation Stack</h2>
+            
+            <p>Here's a complete automation setup for productivity:</p>
+            
+            <pre><code># Morning routine (8 AM daily)
+openclaw cron add --name "morning-brief" \
+  --schedule "cron:0 8 * * *" \
+  --message "Morning briefing: weather, calendar, tasks due today, unread messages summary"
+
+# Health check (every 30 min)
+openclaw cron add --name "health-check" \
+  --schedule "every:1800000" \
+  --message "Run HEARTBEAT.md checks"
+
+# Afternoon focus (2 PM weekdays)
+openclaw cron add --name "focus-check" \
+  --schedule "cron:0 14 * * 1-5" \
+  --message "Check progress on today's goals. What have you completed? What's blocking you?"
+
+# Evening wind-down (9 PM)
+openclaw cron add --name "evening-summary" \
+  --schedule "cron:0 21 * * *" \
+  --message "Daily summary: what was accomplished today? Log achievements and plan tomorrow's priorities"
+
+# Weekly planning (Monday 8 AM)
+openclaw cron add --name "weekly-plan" \
+  --schedule "cron:0 8 * * 1" \
+  --message "Weekly planning session: review last week's outcomes, set this week's goals, identify blockers"
+
+# Monthly review (1st of month, 10 AM)
+openclaw cron add --name "monthly-review" \
+  --schedule "cron:0 10 1 * *" \
+  --message "Monthly strategic review: goal progress, habit tracking, system optimizations, celebrate wins"</code></pre>
+            
+            <h2>Troubleshooting</h2>
+            
+            <h3>"Cron job not running"</h3>
+            <ul>
+                <li>Check gateway is running: <code>openclaw gateway status</code></li>
+                <li>Verify job is enabled: <code>openclaw cron list --include-disabled</code></li>
+                <li>Check timezone settings match your local time</li>
+            </ul>
+            
+            <h3>"Job runs but nothing happens"</h3>
+            <ul>
+                <li>Check the message text is valid and triggers expected actions</li>
+                <li>Review gateway logs for errors</li>
+                <li>Test the message manually in a chat session first</li>
+            </ul>
+            
+            <h3>"Too many notifications"</h3>
+            <ul>
+                <li>Add conditional logic — only alert on actual problems</li>
+                <li>Batch multiple checks into one summary</li>
+                <li>Use different channels (email for urgent, chat for routine)</li>
             </ul>
             
             <div class="tip">
-                💡 <strong>Payloads:</strong> For background tasks, use `sessionTarget: isolated` with `payload.kind: agentTurn` to run sub-agents.
+                <strong>Recommended Service:</strong> Running automation in the cloud? <a href="https://www.digitalocean.com/?refcode=YOURCODE" target="_blank">DigitalOcean</a> gives you $200 credit to keep your AI assistant online 24/7. Perfect for cron jobs and background tasks!
             </div>
-
-            <h2>Step 2: Heartbeats for Periodic Checks</h2>
-
-            <p>Heartbeats are lightweight, frequent checks. You can configure them via the `HEARTBEAT.md` file or by setting up frequent cron jobs.</p>
             
-            <h3>Using `HEARTBEAT.md`</h3>
-            <p>If `HEARTBEAT.md` exists in your workspace, OpenClaw will read it periodically and execute tasks described within. This is great for batching checks like email, calendar, and weather.</p>
+            <h2>Next Steps</h2>
             
-            <pre><code class="language-markdown"># Example HEARTBEAT.md
-
-- Check recent emails for urgent notices.
-- Summarize calendar events for the next 24 hours.
-- Fetch weather updates for your current location.</code></pre>
-            
-            <h3>Scheduling Heartbeats</h3>
-            <p>You can schedule a cron job to trigger a heartbeat check:</p>
-            <pre><code class="language-bash">
-openclaw cron add \
-  --job "{\"name\": \"heartbeat-check\", \"schedule\": {\"kind\": \"every\", \"everyMs\": 14400000}, \"payload\": {\"kind\": \"systemEvent\", \"text\": \"Read HEARTBEAT.md and perform checks.\"}, \"sessionTarget\": \"main\"}"</code></pre>
-            <p>(This example runs every 4 hours: 14,400,000 ms)</p>
-
-            <h2>Step 3: Background Exec Commands</h2>
-
-            <p>For longer-running tasks, use the `exec` tool with the `background` flag.</p>
-            
-            <pre><code class="language-bash"># Example: Run a long-running script in the background
-openclaw exec --command "python your_script.py --process-all-files" --background</code></pre>
-            
-            <p>You can manage these background processes using the `process` tool.</p>
-
-            <h2>Step 4: Managing Background Processes</h2>
-
-            <h3>List Running Processes</h3>
-            <pre><code class="language-bash">openclaw process list</code></pre>
-            
-            <h3>Poll for Output</h3>
-            <pre><code class="language-bash">openclaw process log --sessionId YOUR_SESSION_ID</code></pre>
-            
-            <h3>Kill a Process</h3>
-            <pre><code class="language-bash">openclaw process kill --sessionId YOUR_SESSION_ID</code></pre>
-
-            <h2>What You've Automated</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ Scheduled recurring tasks with cron</li>
-                <li>✅ Implemented periodic checks via heartbeats</li>
-                <li>✅ Managed background execution of scripts</li>
+            <ul>
+                <li>✅ <strong>Smart alerts</strong> — Only notify when thresholds crossed</li>
+                <li>✅ <strong>API integrations</strong> — Connect to calendars, task managers, monitoring tools</li>
+                <li>✅ <strong>Decision trees</strong> — Auto-escalate issues through multiple channels</li>
+                <li>✅ <strong>ML predictions</strong> — Predict problems before they happen</li>
             </ul>
             
-            <div class="next-guide">
-                <h3>Next: Add 20+ Tools</h3>
-                <p>Supercharge your AI with essential CLI tools for media, development, and more.</p>
-                <a href="guide-06-tools.html">Continue to Guide 6 →</a>
-            </div>
+            <p style="margin-top: 40px; text-align: center;">
+                <a href="guide-06-tools.html" style="display: inline-block; background: #667eea; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold;">Next: Guide 6 — Add 20+ Tools →</a>
+            </p>
         </div>
+        
+        <footer>
+            <p>© 2026 OpenClaw Mastery — <a href="index.html" style="color: white;">Back to Home</a></p>
+        </footer>
     </div>
 </body>
 </html>

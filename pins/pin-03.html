@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pin 3 - Easyship Affiliate</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .pin-container {
+            width: 1000px;
+            height: 1500px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .package-icon {
+            font-size: 100px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .savings-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            display: inline-block;
+            margin: 0 auto 30px;
+            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+        }
+        .headline {
+            color: #333;
+            font-size: 68px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .headline span {
+            color: #ff6b6b;
+        }
+        .subheadline {
+            color: #667eea;
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .features-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .feature-item {
+            font-size: 34px;
+            color: #333;
+            margin: 18px 0;
+            display: flex;
+            align-items: center;
+        }
+        .check {
+            color: #28a745;
+            font-size: 38px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-button {
+            background: #28a745;
+            color: white;
+            padding: 30px 70px;
+            border-radius: 50px;
+            font-size: 38px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(40,167,69,0.4);
+        }
+        .trust-badges {
+            margin-top: 30px;
+            font-size: 26px;
+            color: #666;
+            text-align: center;
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .box-icon {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+        }
+        .box-1 { top: 50px; left: 50px; }
+        .box-2 { top: 100px; right: 80px; }
+        .box-3 { bottom: 200px; left: 80px; }
+        .box-4 { bottom: 150px; right: 60px; }
+    </style>
+</head>
+<body>
+    <div class="pin-container">
+        <div class="floating-elements">
+            <div class="box-icon box-1">📦</div>
+            <div class="box-icon box-2">🚚</div>
+            <div class="box-icon box-3">📮</div>
+            <div class="box-icon box-4">🌍</div>
+        </div>
+        
+        <div class="package-icon">📦</div>
+        
+        <div class="savings-badge">SAVE 70%</div>
+        
+        <h1 class="headline">ON <span>SHIPPING</span></h1>
+        
+        <div class="subheadline">Easyship</div>
+        
+        <div class="features-box">
+            <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Compare 250+ Couriers Instantly</span>
+            </div>
+            <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Pre-Negotiated Rates</span>
+            </div>
+            <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Global Fulfillment</span>
+            </div>
+            <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Automated Returns</span>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <button class="cta-button">GET STARTED →</button>
+            <div class="trust-badges">
+                Free to Try • No Credit Card Required
+            </div>
+        </div>
+    </div>
+</body>
+</html>

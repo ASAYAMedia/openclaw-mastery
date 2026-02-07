@@ -10,48 +10,52 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .back-link {
-            color: #667eea;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
         }
         h1 {
             font-size: 2.5em;
-            color: #667eea;
             margin-bottom: 10px;
         }
-        .meta {
-            color: #666;
-            margin-bottom: 30px;
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            display: inline-block;
+            margin-bottom: 20px;
         }
+        .back-link:hover { opacity: 1; }
         .content {
             background: white;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
         h2 {
-            color: #764ba2;
+            color: #667eea;
             margin: 30px 0 15px;
             font-size: 1.5em;
         }
         h3 {
-            color: #333;
+            color: #764ba2;
             margin: 25px 0 10px;
             font-size: 1.2em;
         }
+        p { margin-bottom: 15px; }
         code {
             background: #f4f4f4;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 2px 6px;
+            border-radius: 3px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
@@ -61,19 +65,12 @@
             padding: 20px;
             border-radius: 10px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         pre code {
             background: none;
             padding: 0;
             color: inherit;
-        }
-        .tip {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 5px;
         }
         .warning {
             background: #fff3cd;
@@ -82,281 +79,611 @@
             margin: 20px 0;
             border-radius: 5px;
         }
-        .affiliate-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .affiliate-box a {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
             margin: 20px 0;
+            border-radius: 5px;
         }
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        li { margin-bottom: 8px; }
         .tool-card {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
             border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
         }
         .tool-card h4 {
             color: #667eea;
             margin-bottom: 10px;
         }
-        .complete-box {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        .category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin: 30px 0 20px;
+        }
+        .category h3 {
+            color: white;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            opacity: 0.8;
+        }
+        .final-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 30px;
             border-radius: 15px;
             margin: 40px 0;
             text-align: center;
         }
-        .complete-box h3 {
+        .final-box h2 {
             color: white;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .checklist {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .checklist ul {
+            margin: 10px 0 0 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to All Guides</a>
-        
-        <h1>Guide 6: Add 20+ Tools</h1>
-        <p class="meta">⏱️ 90 minutes | 💰 Free | 🎯 Advanced</p>
+        <header>
+            <a href="index.html" class="back-link">← Back to All Guides</a>
+            <h1>🛠️ Guide 6: Add 20+ Tools</h1>
+            <p>Supercharge your AI assistant with real-world capabilities</p>
+        </header>
         
         <div class="content">
-            <p>Supercharge your AI assistant with essential CLI tools. From media processing to development workflows, these tools turn your assistant into a productivity powerhouse.</p>
-            
-            <h2>What You'll Install</h2>
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>✅ FFmpeg — Video/audio processing</li>
-                <li>✅ GitHub CLI — Repository management</li>
-                <li>✅ yt-dlp — YouTube/media downloading</li>
-                <li>✅ Whisper — Speech-to-text</li>
-                <li>✅ And 16+ more essential tools</li>
-            </ul>
-            
-            <div class="affiliate-box">
-                <h3>🚀 Development Environment</h3>
-                <p>These tools work on Windows, macOS, and Linux. Windows users should install WSL2 for the best experience with Linux-based tools.</p>
-                <a href="https://docs.microsoft.com/en-us/windows/wsl/install" target="_blank">Install WSL2</a>
-            </div>
-
-            <h2>Step 1: Media Processing Tools</h2>
-            
-            <h3>FFmpeg (Essential)</h3>
-            <p>The gold standard for video/audio processing. Your AI can convert, compress, edit, and analyze media files.</p>
-            <pre><code># Windows (via winget)
-winget install Gyan.FFmpeg
-
-# macOS
-brew install ffmpeg
-
-# Linux (Ubuntu/Debian)
-sudo apt update && sudo apt install ffmpeg
-
-# Verify installation
-ffmpeg -version</code></pre>
-            
-            <div class="tip">
-                💡 <strong>Common Uses:</strong> Convert video formats, extract audio from video, compress files for sharing, create thumbnails.
+            <div class="warning">
+                <strong>Difficulty:</strong> Advanced | <strong>Time:</strong> 2-3 hours | <strong>Prerequisites:</strong> All previous guides
             </div>
             
-            <h3>yt-dlp (Media Downloader)</h3>
-            <p>Download videos and audio from YouTube and 1000+ other sites. Perfect for content analysis and archiving.</p>
-            <pre><code># Install via pip (works on all platforms)
-pip install yt-dlp
+            <p>This is the capstone guide. By the end, your AI will be able to manipulate media, scrape websites, analyze data, manage files, and execute code — all securely and locally.</p>
+            
+            <div class="final-box">
+                <h2>🎓 Congratulations!</h2>
+                <p>You've made it to the final guide. By the end of this, you'll have a fully-capable AI assistant that can:</p>
+                <div class="checklist">
+                    <ul>
+                        <li>Edit videos and images</li>
+                        <li>Scrape and analyze websites</li>
+                        <li>Execute code in multiple languages</li>
+                        <li>Manage your files and data</li>
+                        <li>Integrate with 20+ external services</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>🎬 Media Processing Tools</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>1. FFmpeg — Video/Audio Swiss Army Knife</h4>
+                <p>Convert, compress, trim, merge, extract audio, create GIFs, generate thumbnails.</p>
+                <pre><code># Install
+# Windows: Download from ffmpeg.org, add to PATH
+# macOS: brew install ffmpeg
+# Linux: sudo apt install ffmpeg
 
-# Or on macOS/Linux with brew
-brew install yt-dlp
+# Common uses in OpenClaw:
+ffmpeg -i input.mp4 -ss 00:01:00 -t 30 output.mp4  # Trim 30s starting at 1min
+ffmpeg -i video.mp4 -vn -acodec copy audio.aac      # Extract audio
+ffmpeg -i input.mp4 -vf "fps=10,scale=480:-1" output.gif  # Create GIF</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>2. yt-dlp — Download from YouTube & 1000+ sites</h4>
+                <p>Download videos, extract transcripts, get metadata, thumbnails.</p>
+                <pre><code># Install
+pip3 install yt-dlp
 
-# Download a video
+# Basic download
 yt-dlp "https://youtube.com/watch?v=..."
 
-# Extract audio only
-yt-dlp -x --audio-format mp3 "https://youtube.com/watch?v=..."</code></pre>
+# Extract audio only (for transcription)
+yt-dlp -x --audio-format mp3 "https://youtube.com/watch?v=..."
+
+# Get transcript
+yt-dlp --write-subs --sub-langs en "https://youtube.com/watch?v=..."</code></pre>
+            </div>
             
-            <h3>Whisper (Speech-to-Text)</h3>
-            <p>OpenAI's Whisper for transcribing audio. Local processing option available.</p>
-            <pre><code># Install
-pip install openai-whisper
+            <div class="tool-card">
+                <h4>3. ImageMagick — Image manipulation</h4>
+                <p>Resize, convert formats, create composites, generate memes, batch process.</p>
+                <pre><code># Install
+# Windows: Download from imagemagick.org
+# macOS: brew install imagemagick
+# Linux: sudo apt install imagemagick
 
-# Basic usage
-whisper audio_file.mp3 --model medium
-
-# Supported formats: mp3, wav, m4a, flac, and more</code></pre>
-
-            <h2>Step 2: Development Tools</h2>
+# Common operations
+convert input.jpg -resize 800x600 output.jpg
+convert *.jpg -append vertical.jpg  # Stack vertically
+convert -size 400x200 xc:lightblue -pointsize 30 -fill black -gravity center -annotate +0+0 "Hello" output.png</code></pre>
+            </div>
             
-            <h3>GitHub CLI (gh)</h3>
-            <p>Manage repositories, issues, PRs, and workflows directly from the command line.</p>
-            <pre><code># Windows
-winget install GitHub.cli
+            <div class="tool-card">
+                <h4>4. Pandoc — Document converter</h4>
+                <p>Convert between Markdown, PDF, Word, HTML, EPUB, LaTeX, and 40+ formats.</p>
+                <pre><code># Install
+# Windows: Download from pandoc.org
+# macOS/Linux: Built-in or package manager
 
-# macOS
-brew install gh
+# Markdown to PDF
+pandoc document.md -o document.pdf
 
-# Linux
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update && sudo apt install gh
+# Web page to Markdown
+pandoc https://example.com -o example.md
+
+# Word to Markdown
+pandoc document.docx -o document.md</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>🌐 Web & Data Tools</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>5. curl — HTTP requests</h4>
+                <p>Already built into OpenClaw, but know the power: API calls, downloads, webhooks.</p>
+                <pre><code># GET request
+curl https://api.example.com/data
+
+# POST with JSON
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"key":"value"}' https://api.example.com/submit
+
+# Download file
+curl -O https://example.com/file.zip</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>6. jq — JSON processor</h4>
+                <p>Parse, filter, transform JSON data from APIs.</p>
+                <pre><code># Install
+# Windows: Download from stedolan.github.io/jq
+# macOS: brew install jq
+# Linux: sudo apt install jq
+
+# Extract specific field
+curl https://api.github.com/users/octocat | jq '.login'
+
+# Filter arrays
+curl https://api.example.com/items | jq '.[] | select(.price < 100)'
+
+# Transform structure
+cat data.json | jq '{name: .firstName, email: .contact.email}'</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>7. pup — HTML parsing (like jq for HTML)</h4>
+                <p>Scrape websites, extract data from HTML without writing code.</p>
+                <pre><code># Install
+# macOS: brew install pup
+# Others: Download from github.com/ericchiang/pup
+
+# Extract all links
+curl https://example.com | pup 'a attr{href}'
+
+# Extract article titles
+curl https://news.ycombinator.com | pup 'span.titleline>a text{}'
+
+# Get meta description
+curl https://example.com | pup 'meta[name=description] attr{content}'</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>8. sqlite3 — Database</h4>
+                <p>Lightweight SQL database perfect for storing structured data locally.</p>
+                <pre><code># Usually pre-installed
+
+# Create database
+sqlite3 workspace/data.db "CREATE TABLE logs (id INTEGER PRIMARY KEY, message TEXT, timestamp DATETIME);"
+
+# Insert data
+sqlite3 workspace/data.db "INSERT INTO logs (message, timestamp) VALUES ('System started', datetime('now'));"
+
+# Query
+sqlite3 workspace/data.db "SELECT * FROM logs ORDER BY timestamp DESC LIMIT 10;"</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>💻 Development Tools</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>9. GitHub CLI — Manage repos from command line</h4>
+                <p>Create issues, PRs, view notifications, manage workflows.</p>
+                <pre><code># Install
+# Windows: winget install GitHub.cli
+# macOS: brew install gh
+# Linux: See github.com/cli/cli
 
 # Authenticate
 gh auth login
 
-# Clone a repo
-gh repo clone owner/repo</code></pre>
-            
-            <h3>Git (Version Control)</h3>
-            <p>You probably already have this, but ensure it's configured:</p>
-            <pre><code># Configure git
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+# Create issue
+gh issue create --title "Bug found" --body "Description..."
 
-# Create SSH key for GitHub
-ssh-keygen -t ed25519 -C "your.email@example.com"
-cat ~/.ssh/id_ed25519.pub</code></pre>
+# List PRs
+gh pr list
 
-            <h2>Step 3: Data & File Tools</h2>
-            
-            <div class="tool-grid">
-                <div class="tool-card">
-                    <h4>📊 jq</h4>
-                    <p>JSON processor. Essential for API responses.</p>
-                    <code>brew install jq</code>
-                </div>
-                
-                <div class="tool-card">
-                    <h4>📈 fzf</h4>
-                    <p>Fuzzy finder for files and command history.</p>
-                    <code>brew install fzf</code>
-                </div>
-                
-                <div class="tool-card">
-                    <h4>📋 bat</h4>
-                    <p>Enhanced cat with syntax highlighting.</p>
-                    <code>brew install bat</code>
-                </div>
-                
-                <div class="tool-card">
-                    <h4>🔍 ripgrep (rg)</h4>
-                    <p>Fast code search. Better than grep.</p>
-                    <code>brew install ripgrep</code>
-                </div>
-                
-                <div class="tool-card">
-                    <h4>📁 tree</h4>
-                    <p>Display directory structures.</p>
-                    <code>brew install tree</code>
-                </div>
-                
-                <div class="tool-card">
-                    <h4>🗜️ 7-Zip</h4>
-                    <p>Compression/decompression tool.</p>
-                    <code>winget install 7zip.7zip</code>
-                </div>
+# View notifications
+gh api notifications</code></pre>
             </div>
             
-            <h3>Python Data Science Stack</h3>
-            <pre><code># Essential Python packages
-pip install pandas numpy matplotlib seaborn jupyter
+            <div class="tool-card">
+                <h4>10. Python — Scripting & data analysis</h4>
+                <p>OpenClaw already has Python. Key libraries to install:</p>
+                <pre><code># Data & ML
+pip3 install pandas numpy matplotlib scikit-learn
 
-# For computer vision
-pip install opencv-python pillow
+# Web scraping
+pip3 install beautifulsoup4 requests selenium
 
-# For web scraping
-pip install requests beautifulsoup4 scrapy
-
-# For APIs
-pip install fastapi uvicorn</code></pre>
-
-            <h2>Step 4: Configure Tools in OpenClaw</h2>
+# Utilities
+pip3 install python-dotenv pyyaml toml</code></pre>
+            </div>
             
-            <p>Edit your OpenClaw config to enable these tools:</p>
-            <pre><code>{
-  "commands": {
-    "bash": true,
-    "restart": true
-  },
-  "tools": {
-    "web": {
-      "search": { "enabled": true },
-      "fetch": { "enabled": true }
-    },
-    "media": {
-      "enabled": true,
-      "ffmpeg": "C:\\Path\\To\\ffmpeg.exe"
-    }
-  }
-}</code></pre>
+            <div class="tool-card">
+                <h4>11. Node.js — JavaScript runtime</h4>
+                <p>Run JavaScript tools, use npm packages for web scraping, automation.</p>
+                <pre><code># Install from nodejs.org
 
-            <h2>Complete Tool List</h2>
+# Useful packages
+npm install -g prettier  # Code formatter
+npm install -g @anthropic-ai/sdk  # Claude API
+
+# Run scripts
+node script.js</code></pre>
+            </div>
             
-            <p>Here's everything you should have installed:</p>
-            <ol style="margin: 15px 0; padding-left: 30px;">
-                <li>FFmpeg — Video/audio processing</li>
-                <li>yt-dlp — Media downloading</li>
-                <li>Whisper — Speech-to-text</li>
-                <li>GitHub CLI (gh) — GitHub management</li>
-                <li>Git — Version control</li>
-                <li>jq — JSON processor</li>
-                <li>fzf — Fuzzy finder</li>
-                <li>bat — Better cat</li>
-                <li>ripgrep — Fast search</li>
-                <li>tree — Directory visualization</li>
-                <li>7-Zip — Compression</li>
-                <li>curl — HTTP requests</li>
-                <li>wget — File downloading</li>
-                <li>Python 3.x — Scripting</li>
-                <li>Node.js — JavaScript runtime</li>
-                <li>npm/ yarn — Package managers</li>
-                <li>Docker — Containerization</li>
-                <li>VS Code CLI (code) — Editor</li>
-                <li>htop — System monitor</li>
-                <li>neofetch — System info</li>
-            </ol>
+            <div class="tool-card">
+                <h4>12. Docker — Containerize anything</h4>
+                <p>Run isolated services without polluting your main system.</p>
+                <pre><code># Install from docker.com
 
-            <div class="complete-box">
-                <h3>🎉 Congratulations!</h3>
-                <p>You've built a complete AI assistant with:</p>
-                <p>✅ OpenClaw platform<br>
-                ✅ Multi-platform messaging<br>
-                ✅ Voice control<br>
-                ✅ Private memory<br>
-                ✅ Automation & scheduling<br>
-                ✅ 20+ powerful tools</p>
-                <p style="margin-top: 20px;"><strong>Your AI assistant is now a productivity powerhouse!</strong></p>
+# Common containers
+# Run isolated browser
+docker run -p 9222:9222 browserless/chrome
+
+# Run database
+docker run -d -p 5432:5432 postgres
+
+# Run Jupyter
+docker run -p 8888:8888 jupyter/scipy-notebook</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>📊 System & Monitoring Tools</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>13. htop — Interactive process viewer</h4>
+                <p>Better than top. Monitor CPU, memory, processes in real-time.</p>
+                <pre><code># Install
+# macOS: brew install htop
+# Linux: sudo apt install htop
+
+# Run
+htop</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>14. ncdu — Disk usage analyzer</h4>
+                <p>Find what's eating your disk space. Interactive, fast.</p>
+                <pre><code># Install
+# macOS: brew install ncdu
+# Linux: sudo apt install ncdu
+
+# Scan current directory
+ncdu .
+
+# Scan specific path
+ncdu /home/user/workspace</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>15. lsof — List open files</h4>
+                <p>See what processes are using which files/ports.</p>
+                <pre><code># Find process using port 3000
+lsof -i :3000
+
+# Find what files a process has open
+lsof -p 1234
+
+# Find deleted but still-open files (space hogs)
+lsof +L1</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>16. watch — Run command periodically</h4>
+                <p>Monitor changing output in real-time.</p>
+                <pre><code># Monitor directory changes
+watch -n 1 ls -la
+
+# Monitor memory usage
+watch -n 2 free -h
+
+# Monitor specific process
+watch -n 5 'ps aux | grep python'</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>🔐 Security & Networking</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>17. openssl — Crypto toolkit</h4>
+                <p>Generate keys, certificates, hashes, encrypt/decrypt.</p>
+                <pre><code># Generate hash
+echo "text" | openssl dgst -sha256
+
+# Encrypt file
+openssl enc -aes-256-cbc -salt -in file.txt -out file.enc
+
+# Generate password
+openssl rand -base64 32</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>18. nmap — Network scanner</h4>
+                <p>Scan ports, discover devices on network.</p>
+                <pre><code># Install
+# macOS: brew install nmap
+# Linux: sudo apt install nmap
+
+# Scan localhost ports
+nmap localhost
+
+# Quick scan of network
+nmap -sn 192.168.1.0/24</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>19. ssh — Secure remote access</h4>
+                <p>Connect to remote servers, tunnel traffic, copy files.</p>
+                <pre><code># Connect to server
+ssh user@example.com
+
+# Copy files
+scp file.txt user@example.com:/path/
+
+# Create tunnel
+ssh -L 8080:localhost:80 user@example.com</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>📁 File & Text Tools</h3>
+            </div>
+            
+            <div class="tool-card">
+                <h4>20. fzf — Fuzzy finder</h4>
+                <p>Interactive filtering of lists, files, history.</p>
+                <pre><code># Install
+# macOS: brew install fzf
+# Linux: sudo apt install fzf
+
+# Find files interactively
+find . -type f | fzf
+
+# Search command history
+history | fzf
+
+# Select multiple files
+ls | fzf -m</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>21. ripgrep (rg) — Fast code search</h4>
+                <p>Search code 10x faster than grep. Respects .gitignore.</p>
+                <pre><code># Install
+# macOS: brew install ripgrep
+# Windows: winget install BurntSushi.ripgrep.MSVC
+# Linux: cargo install ripgrep
+
+# Search for pattern
+rg "function_name" --type py
+
+# List all files
+rg --files
+
+# Search with context
+rg -C 3 "TODO"</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>22. fd — User-friendly find</h4>
+                <p>Simpler, faster alternative to find command.</p>
+                <pre><code># Install
+# macOS: brew install fd
+# Linux: sudo apt install fd-find
+
+# Find by name
+fd "*.py"
+
+# Find and execute
+fd -e log -x rm {}
+
+# Case insensitive
+fd -i "readme"</code></pre>
+            </div>
+            
+            <div class="tool-card">
+                <h4>23. bat — Better cat</h4>
+                <p>Syntax highlighting, git integration, line numbers.</p>
+                <pre><code># Install
+# macOS: brew install bat
+# Linux: sudo apt install bat
+
+# View file with syntax highlighting
+bat script.py
+
+# Show line numbers
+bat -n file.txt</code></pre>
+            </div>
+            
+            <div class="category">
+                <h3>⚡ Quick Reference</h3>
+            </div>
+            
+            <h3>One-Liner Install Scripts</h3>
+            <pre><code># macOS (Homebrew)
+brew install ffmpeg yt-dlp imagemagick pandoc jq pup sqlite3 gh node docker htop ncdu nmap fzf ripgrep fd bat
+
+# Ubuntu/Debian
+sudo apt update
+sudo apt install ffmpeg yt-dlp imagemagick pandoc jq sqlite3 nodejs docker.io htop ncdu nmap fzf ripgrep fd-find bat
+
+# Windows (Chocolatey)
+choco install ffmpeg yt-dlp imagemagick pandoc jq sqlite nodejs docker-desktop htop nmap fzf ripgrep fd bat</code></pre>
+            
+            <h3>Integrating with OpenClaw</h3>
+            <p>Create a wrapper script so OpenClaw can call any tool:</p>
+            <pre><code># tools_wrapper.py - Let OpenClaw access all tools
+
+import subprocess
+import shlex
+from typing import List, Tuple
+
+class ToolRunner:
+    """Safe wrapper for running system tools"""
+    
+    ALLOWED_TOOLS = [
+        'ffmpeg', 'yt-dlp', 'convert', 'pandoc', 'curl', 'jq',
+        'pup', 'sqlite3', 'gh', 'docker', 'htop', 'ncdu',
+        'lsof', 'watch', 'openssl', 'nmap', 'ssh', 'fzf',
+        'rg', 'fd', 'bat', 'python', 'node', 'git'
+    ]
+    
+    def run(self, command: str, timeout: int = 60) -> Tuple[str, str, int]:
+        """
+        Run a tool safely
+        
+        Returns: (stdout, stderr, return_code)
+        """
+        # Parse command
+        parts = shlex.split(command)
+        tool = parts[0]
+        
+        # Security check
+        if tool not in self.ALLOWED_TOOLS:
+            return "", f"Tool '{tool}' not in allowed list", 1
+        
+        try:
+            result = subprocess.run(
+                parts,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+                cwd="workspace"
+            )
+            return result.stdout, result.stderr, result.returncode
+        except subprocess.TimeoutExpired:
+            return "", "Command timed out", 1
+        except Exception as e:
+            return "", str(e), 1
+
+# Usage in OpenClaw
+runner = ToolRunner()
+stdout, stderr, code = runner.run("yt-dlp --list-formats https://youtube.com/watch?v=...")</code></pre>
+            
+            <div class="tip">
+                <strong>Security Note:</strong> Always validate commands before execution. Never pass raw user input directly to shell commands. Use the whitelist approach shown above.
+            </div>
+            
+            <h3>Creating Custom Tools</h3>
+            <p>Build your own tools and add them to OpenClaw's toolkit:</p>
+            <pre><code># custom_tools.py
+
+import os
+from datetime import datetime
+
+def screenshot_desktop():
+    """Take a screenshot"""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"workspace/screenshots/capture_{timestamp}.png"
+    os.makedirs("workspace/screenshots", exist_ok=True)
+    
+    if os.name == 'nt':  # Windows
+        # Use PowerShell
+        pass
+    else:  # macOS/Linux
+        os.system(f"screencapture {filename}")  # macOS
+        # or: os.system(f"gnome-screenshot -f {filename}")  # Linux
+    
+    return filename
+
+def generate_password(length=16):
+    """Generate secure random password"""
+    import secrets
+    import string
+    alphabet = string.ascii_letters + string.digits + "!@#$%^&*"
+    return ''.join(secrets.choice(alphabet) for _ in range(length))
+
+def compress_folder(folder_path, output_name=None):
+    """Compress folder to zip"""
+    import shutil
+    if not output_name:
+        output_name = f"{folder_path}.zip"
+    shutil.make_archive(output_name.replace('.zip', ''), 'zip', folder_path)
+    return output_name</code></pre>
+            
+            <div class="final-box">
+                <h2>🎉 You've Built a Superhuman AI Assistant</h2>
+                <p>Your OpenClaw assistant can now:</p>
+                <div class="checklist">
+                    <ul>
+                        <li>✅ Run locally on your machine (privacy-first)</li>
+                        <li>✅ Chat via Telegram, WhatsApp, Discord</li>
+                        <li>✅ Understand voice commands and speak back</li>
+                        <li>✅ Remember everything forever (semantic memory)</li>
+                        <li>✅ Work autonomously with scheduled tasks</li>
+                        <li>✅ Process media, code, data, and documents</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 20px;"><strong>Welcome to the future. Your AI works for you, 24/7.</strong></p>
             </div>
             
             <h2>What's Next?</h2>
             
-            <ul style="margin: 15px 0; padding-left: 30px;">
-                <li>🚀 <strong>Deploy to the cloud</strong> — Use DigitalOcean to keep your bot online 24/7</li>
-                <li>🔒 <strong>Add more security</strong> — Set up VPN, firewall rules</li>
-                <li>🤖 <strong>Build custom skills</strong> — Create reusable automation workflows</li>
-                <li>📊 <strong>Monitor performance</strong> — Add uptime monitoring and logging</li>
-                <li>🌐 <strong>Share your project</strong> — Document and open-source your setup</li>
+            <ul>
+                <li>🚀 <strong>Share your setup</strong> — Post on r/selfhosted, IndieHackers, Twitter</li>
+                <li>📚 <strong>Contribute</strong> — Improve OpenClaw docs, share your configs</li>
+                <li>💡 <strong>Extend</strong> — Add more tools, build custom skills, integrate APIs</li>
+                <li>🌐 <strong>Monetize</strong> — Offer setup services, create tutorials, build products</li>
             </ul>
             
-            <p style="margin-top: 30px; text-align: center;">
-                <strong>Questions or need help?</strong><br>
-                Join the OpenClaw community on <a href="https://discord.com/invite/clawd">Discord</a> or find me on Telegram!
+            <div class="tip">
+                <strong>All Affiliate Links Are Live:</strong> Your OpenClaw Mastery site now has working affiliate links for Easyship, Gemini Exchange, Shopify, and MarketXLS. Start sharing the tutorials and earning commissions!
+            </div>
+            
+            <p style="margin-top: 40px; text-align: center;">
+                <a href="index.html" style="display: inline-block; background: white; color: #667eea; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold;">← Back to Home — Share Your Success!</a>
             </p>
         </div>
+        
+        <footer>
+            <p>© 2026 OpenClaw Mastery — <a href="index.html" style="color: white;">Back to Home</a></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Built with ❤️ by AI, for humans</p>
+        </footer>
     </div>
 </body>
 </html>
