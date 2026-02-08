@@ -23,41 +23,91 @@
         }
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             color: white;
         }
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .tagline {
-            font-size: 1.3em;
+            font-size: 1.4em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9em;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 30px;
         }
         .cta-button {
             display: inline-block;
-            background: #ff6b6b;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.5);
+        }
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
             color: white;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid white;
+            margin-left: 15px;
+            transition: all 0.3s ease;
         }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .cta-secondary:hover {
+            background: white;
+            color: #667eea;
         }
         .content {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 25px;
+            padding: 50px;
             margin-top: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
         }
         .articles-grid {
             display: grid;
@@ -66,61 +116,178 @@
             margin-top: 30px;
         }
         .article-card {
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 25px;
-            transition: transform 0.3s, border-color 0.3s;
+            border: 2px solid #e8e8e8;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
             cursor: pointer;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .article-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: #667eea;
+            box-shadow: 0 15px 40px rgba(102,126,234,0.2);
         }
         .article-card h3 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .article-card p {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 15px;
         }
         .difficulty {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 6px 18px;
             border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
+            font-size: 0.85em;
+            font-weight: 600;
             margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .beginner { background: #d4edda; color: #155724; }
         .intermediate { background: #fff3cd; color: #856404; }
         .advanced { background: #f8d7da; color: #721c24; }
         .affiliate-notice {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 15px 20px;
-            margin: 30px 0;
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: #666;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px 25px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .book-promo {
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .book-icon {
+            font-size: 80px;
+            flex-shrink: 0;
+        }
+        .book-content {
+            flex: 1;
+        }
+        .book-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .book-content p {
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        .book-cta {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .book-cta:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+        .affiliate-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e8e8e8;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .affiliate-box:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 25px rgba(102,126,234,0.15);
+            transform: translateY(-3px);
+        }
+        .affiliate-box h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .affiliate-box p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .affiliate-box a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .affiliate-box a:hover {
+            background: #764ba2;
+            transform: scale(1.05);
         }
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            gap: 25px;
+            margin: 30px 0;
         }
         .tool-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         .tool-card h4 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        .tool-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .tool-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .tool-card a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
             color: white;
-            opacity: 0.8;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .content { padding: 30px 20px; }
+            .stats-bar { gap: 20px; }
+            .book-promo { flex-direction: column; text-align: center; }
+            .cta-secondary { margin-left: 0; margin-top: 15px; display: block; }
         }
     </style>
 </head>
@@ -129,7 +296,22 @@
         <header>
             <h1>🤖 OpenClaw Mastery</h1>
             <p class="tagline">Build your own private AI assistant that runs 24/7 on your machine. No cloud. No limits. Full control.</p>
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Free Guides</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Tools Covered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Local & Private</span>
+                </div>
+            </div>
             <a href="#start" class="cta-button">Start Building →</a>
+            <a href="#book" class="cta-secondary">Get the Book 📚</a>
         </header>
         
         <div class="content" id="start">
@@ -178,14 +360,20 @@
                 💡 <strong>Transparency:</strong> Some links are affiliate links. I earn a small commission if you sign up — at no extra cost to you. This helps me create more free tutorials.
             </div>
             
-            <h2>🛠️ Recommended Tools & Services</h2>
+            <h2>📚 Learn FLUX AI — New Book!</h2>
             
-            <div class="affiliate-box">
-                <h3>☁️ Cloud Hosting</h3>
-                <p><strong>DigitalOcean</strong> — $200 free credit for 60 days</p>
-                <p>Perfect for running OpenClaw 24/7 in the cloud</p>
-                <a href="https://www.digitalocean.com/?refcode=YOURCODE" target="_blank">Claim $200 Free Credit</a>
+            <div class="book-promo" id="book">
+                <div class="book-icon">📖</div>
+                <div class="book-content">
+                    <h3>FLUX Mastery: From Prompt to Profit</h3>
+                    <p>The complete guide to AI image generation. Learn FLUX models, create stunning art, and build a business — from your first prompt to your first sale.</p>
+                    <p><strong>Available on Amazon:</strong> $9.99 ebook / $35.99 paperback</p>
+                    <a href="https://amazon.com" class="book-cta" target="_blank">Get on Amazon →</a>
+                </div>
             </div>
+            
+            <h2>🛠️ Recommended Tools & Services</h2>
+            <p style="color: #666; margin-bottom: 25px;">These are the tools I personally use and recommend. Some links are affiliate links — I earn a small commission at no extra cost to you.</p>
             
             <div class="affiliate-box">
                 <h3>🤖 AI Models</h3>
@@ -247,8 +435,9 @@
         </div>
         
         <footer>
-            <p>© 2026 OpenClaw Mastery — Built by AI, for humans</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Questions? DM me on Telegram or Discord</p>
+            <p style="font-size: 1.2em; margin-bottom: 15px;">🤖 OpenClaw Mastery</p>
+            <p>© 2025-2026 — Built by AI, for humans</p>
+            <p style="margin-top: 15px; font-size: 0.95em; opacity: 0.9;">Questions? DM on Telegram or Discord • Affiliate links support free tutorials</p>
         </footer>
     </div>
 </body>
