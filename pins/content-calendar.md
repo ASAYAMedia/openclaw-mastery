@@ -377,4 +377,98 @@ MarketXLS: https://marketxls.pxf.io/c/6963612/346913/5139
 
 ---
 
+## 3 NEW PINS — Ready to Screenshot
+
+### Pin 5: Shopify — Start Your Online Store
+**HTML File**: `pin-05.html` (Green/yellow gradient, shop theme)
+**Title**: "Start Your Online Store — Shopify Free Trial"
+**Description**:
+```
+Ready to turn your passion into profit? 🛒
+
+Start your online store with Shopify — the #1 e-commerce platform trusted by millions.
+
+What you get FREE:
+✅ Beautiful, customizable themes
+✅ Built-in payment processing
+✅ 24/7 expert support
+✅ No credit card required to start
+
+Commission: $10-$150 per signup 💰
+
+Start your 14-day free trial today → [link]
+
+#Shopify #ecommerce #onlineshop #sidehustle #passiveincome #affiliatemarketing
+```
+**Link**: https://shopify.pxf.io/c/6963612/1945365/13624
+**Board**: Make Money Online
+
+---
+
+### Pin 6: MarketXLS — Excel Stock Analysis
+**HTML File**: `pin-06.html` (Dark professional, chart theme)
+**Title**: "Analyze Stocks in Excel — Real-Time Data"
+**Description**:
+```
+Track your investments like a pro 📊
+
+MarketXLS brings live stock data directly into Excel — no more switching between tabs!
+
+Features:
+✅ Real-time stock prices
+✅ Technical indicators built-in
+✅ Portfolio tracking
+✅ 30-day free trial
+
+10% recurring commission 💵
+
+Try free for 30 days → [link]
+
+#stockmarket #excel #investing #daytrading #financialanalysis #marketxls
+```
+**Link**: https://marketxls.pxf.io/c/6963612/346913/5139
+**Board**: Investing & Finance
+
+---
+
+### Pin 7: Gemini Exchange — $40 Bonus
+**HTML File**: `pin-07.html` (Purple gradient, crypto theme)
+**Title**: "$40 Free — Start Crypto Trading on Gemini"
+**Description**:
+```
+New to crypto? Start with $40 FREE 💰
+
+Gemini is a regulated US exchange that's secure, simple, and trusted.
+
+Why Gemini?
+✅ Regulated & compliant
+✅ Low trading fees
+✅ Bank-level security
+✅ Easy mobile app
+
+Get $40 bonus on your first trade! 🚀
+
+Start trading → [link]
+
+#crypto #bitcoin #ethereum #gemini #cryptotrading #affiliate #freecrypto
+```
+**Link**: https://gemini.sjv.io/c/6963612/3062995/11829
+**Board**: Crypto & Investing
+
+---
+
+## All 7 Pin HTML Files
+
+1. **pin-01.html** → Build Your AI Assistant
+2. **pin-02.html** → 23 Free Tools
+3. **pin-03.html** → Easyship Shipping
+4. **pin-04.html** → (additional if needed)
+5. **pin-05.html** → Shopify (NEW)
+6. **pin-06.html** → MarketXLS (NEW)
+7. **pin-07.html** → Gemini Exchange (NEW)
+
+**Next Step**: Screenshot each HTML file → Upload to Pinterest → Copy descriptions → Start earning!
+
+---
+
 **Next Step**: Create 3-5 pins in Canva using these templates and start pinning!

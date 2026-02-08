@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pin 6 - Excel Stock Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .pin-container {
+            width: 1000px;
+            height: 1500px;
+            background: linear-gradient(180deg, #2d3436 0%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+        .chart-icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        .commission-badge {
+            background: #00cec9;
+            color: #2d3436;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0,206,201,0.4);
+        }
+        .headline {
+            color: white;
+            font-size: 68px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .headline span {
+            color: #00cec9;
+        }
+        .subheadline {
+            color: #b2bec3;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        .features {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 850px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .feature-item {
+            color: white;
+            font-size: 30px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        .checkmark {
+            color: #00cec9;
+            font-size: 34px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .cta-button {
+            background: #00cec9;
+            color: #2d3436;
+            padding: 25px 60px;
+            border-radius: 50px;
+            font-size: 36px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 40px;
+            box-shadow: 0 8px 30px rgba(0,206,201,0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .chart-line {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.1;
+        }
+        .line-1 { top: 80px; left: 60px; }
+        .line-2 { top: 120px; right: 80px; }
+        .line-3 { bottom: 250px; left: 100px; }
+        .line-4 { bottom: 180px; right: 60px; }
+    </style>
+</head>
+<body>
+    <div class="pin-container">
+        <div class="floating-elements">
+            <div class="chart-line line-1">📈</div>
+            <div class="chart-line line-2">📊</div>
+            <div class="chart-line line-3">💹</div>
+            <div class="chart-line line-4">📉</div>
+        </div>
+        
+        <div class="chart-icon">📊</div>
+        
+        <div class="commission-badge">10% Recurring Commission</div>
+        
+        <h1 class="headline">STOCK ANALYSIS<br><span>IN EXCEL</span></h1>
+        
+        <div class="subheadline">Real-Time Data • MarketXLS</div>
+        
+        <div class="features">
+            <div class="feature-item">
+                <span class="checkmark">✓</span>
+                <span>Live Stock Prices in Excel</span>
+            </div>
+            <div class="feature-item">
+                <span class="checkmark">✓</span>
+                <span>Technical Indicators Built-in</span>
+            </div>
+            <div class="feature-item">
+                <span class="checkmark">✓</span>
+                <span>Portfolio Tracking</span>
+            </div>
+            <div class="feature-item">
+                <span class="checkmark">✓</span>
+                <span>30-Day Free Trial</span>
+            </div>
+        </div>
+        
+        <button class="cta-button">TRY FREE →</button>
+    </div>
+</body>
+</html>
